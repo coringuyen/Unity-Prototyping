@@ -8,25 +8,25 @@ SceneSettings:
   m_PVSPortalsArray: []
   m_OcclusionBakeSettings:
     smallestOccluder: 5
-    smallestHole: .25
+    smallestHole: 0.25
     backfaceThreshold: 100
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
   m_Fog: 0
-  m_FogColor: {r: .5, g: .5, b: .5, a: 1}
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: .00999999978
+  m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: .211999997, g: .226999998, b: .259000003, a: 1}
-  m_AmbientEquatorColor: {r: .114, g: .125, b: .133000001, a: 1}
-  m_AmbientGroundColor: {r: .0469999984, g: .0430000015, b: .0350000001, a: 1}
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
-  m_HaloStrength: .5
+  m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -40,7 +40,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 5
+  serializedVersion: 6
   m_GIWorkflowMode: 0
   m_LightmapsMode: 1
   m_GISettings:
@@ -66,7 +66,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightmapSnapshot: {fileID: 0}
+  m_LightingDataAsset: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
 NavMeshSettings:
@@ -74,15 +74,15 @@ NavMeshSettings:
   m_ObjectHideFlags: 0
   m_BuildSettings:
     serializedVersion: 2
-    agentRadius: .5
+    agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
-    agentClimb: .400000006
+    agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     accuratePlacement: 0
     minRegionArea: 2
-    cellSize: .166666672
+    cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
 --- !u!114 &68340109 stripped
@@ -120,11 +120,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2002012575}
   m_RootOrder: 5
-  m_AnchorMin: {x: .5, y: 1}
-  m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: -180, y: -3.05175781e-05}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -180, y: -0.000030517578}
   m_SizeDelta: {x: 1278, y: 1200}
-  m_Pivot: {x: .5, y: 1}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &154954299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -150,8 +150,9 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 53
     m_Alignment: 1
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -185,7 +186,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 268434263}
-  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
   m_LocalPosition: {x: -5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -230,8 +231,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 357958019}
-  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
-  m_LocalPosition: {x: 5, y: 0, z: -2.25999999}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 5, y: 0, z: -2.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1874420213}
@@ -289,12 +290,12 @@ MonoBehaviour:
   battleCam: {fileID: 0}
   source: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
-  offset: .0199999996
-  step: .0599999987
+  offset: 0.02
+  step: 0.06
   label: {fileID: 0}
   _health: 476
-  _attack: .720000029
-  _defense: 2.6099999
+  _attack: 0.72
+  _defense: 2.61
   _active: 0
 --- !u!1001 &837382588
 Prefab:
@@ -809,12 +810,12 @@ MonoBehaviour:
   battleCam: {fileID: 0}
   source: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
-  offset: .0199999996
-  step: .0599999987
+  offset: 0.02
+  step: 0.06
   label: {fileID: 0}
   _health: 114
-  _attack: 1.64999998
-  _defense: 1.47000003
+  _attack: 1.65
+  _defense: 1.47
   _active: 0
 --- !u!1 &1051442901
 GameObject:
@@ -862,7 +863,7 @@ MonoBehaviour:
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
-  m_RepeatDelay: .5
+  m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
 --- !u!114 &1051442904
 MonoBehaviour:
@@ -1125,7 +1126,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1521386484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -.730000019}
+  m_LocalPosition: {x: 0, y: 0, z: -0.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1090408343}
@@ -1511,7 +1512,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 1
-  m_Color: {r: 1, g: .956862748, b: .839215696, a: 1}
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1520,8 +1521,9 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_Strength: 1
-    m_Bias: .0500000007
-    m_NormalBias: .400000006
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -1540,8 +1542,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1754171396}
-  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381676, w: .875426054}
-  m_LocalPosition: {x: .878779471, y: 3.41633224, z: .518071651}
+  m_LocalRotation: {x: 0.40821794, y: -0.23456973, z: 0.109381676, w: 0.87542605}
+  m_LocalPosition: {x: 0.8787795, y: 3.4163322, z: 0.51807165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1139365969}
@@ -1713,12 +1715,12 @@ MonoBehaviour:
   battleCam: {fileID: 0}
   source: {x: 0, y: 0, z: 0}
   target: {fileID: 734548450}
-  offset: 1.04999995
-  step: .0599999987
+  offset: 1.05
+  step: 0.06
   label: {fileID: 154954299}
   _health: 39
-  _attack: 9.64999962
-  _defense: 2.43000007
+  _attack: 9.65
+  _defense: 2.43
   _active: 1
 --- !u!114 &1874420216
 MonoBehaviour:
@@ -1735,10 +1737,10 @@ MonoBehaviour:
   m_StationaryTurnSpeed: 180
   m_JumpPower: 12
   m_GravityMultiplier: 2
-  m_RunCycleLegOffset: .200000003
+  m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: .100000001
+  m_GroundCheckDistance: 0.1
 --- !u!54 &1874420217
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1748,7 +1750,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1763,10 +1765,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .230000004
-  m_Height: 1.85000002
+  m_Radius: 0.23
+  m_Height: 1.85
   m_Direction: 1
-  m_Center: {x: 0, y: .930000007, z: 0}
+  m_Center: {x: 0, y: 0.93, z: 0}
 --- !u!4 &1939797728 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 851d11542d51c464e89acf6875599172, type: 2}
@@ -1896,12 +1898,12 @@ MonoBehaviour:
   battleCam: {fileID: 1308146254}
   source: {x: 0, y: 0, z: 0}
   target: {fileID: 734548450}
-  offset: 1.04999995
-  step: .0599999987
+  offset: 1.05
+  step: 0.06
   label: {fileID: 154954299}
   _health: 39
-  _attack: 9.64999962
-  _defense: 2.43000007
+  _attack: 9.65
+  _defense: 2.43
   _active: 1
 --- !u!114 &2046771572
 MonoBehaviour:
@@ -1918,10 +1920,10 @@ MonoBehaviour:
   m_StationaryTurnSpeed: 180
   m_JumpPower: 12
   m_GravityMultiplier: 2
-  m_RunCycleLegOffset: .200000003
+  m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: .100000001
+  m_GroundCheckDistance: 0.1
 --- !u!54 &2046771573
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1931,7 +1933,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1946,10 +1948,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .25
+  m_Radius: 0.25
   m_Height: 1.25
   m_Direction: 1
-  m_Center: {x: 0, y: .610000014, z: 0}
+  m_Center: {x: 0, y: 0.61, z: 0}
 --- !u!1001 &2100032813
 Prefab:
   m_ObjectHideFlags: 0
