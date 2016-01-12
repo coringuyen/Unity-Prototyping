@@ -15,6 +15,8 @@ public class ShowcaseUI : MonoBehaviour
 
     public GameObject ControlsMenu;
 
+    GameObject previousMenu;
+    public GameObject activeMenu;
 
 	// Use this for initialization
 	void Start () {
@@ -22,15 +24,64 @@ public class ShowcaseUI : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update ()
+    {
+	    MenuFlow();
 	}
 
-    public void MenuActivated(GameObject menu)
+    public void MenuChange(string menu)
     {
-        if(menu == PauseMenu)
+        if(menu == "_controls")
         {
-            
+            activeMenu = ControlsMenu;
+            previousMenu = PauseMenu;
+            PauseMenu.SetActive(false);
+            ControlsMenu.SetActive(true);
         }
+
+        if(menu == "_pause")
+        {
+            activeMenu = PauseMenu;
+            PauseMenu.SetActive(true);
+            pauseButtons[0].Select();
+        }
+    }
+
+    public void GoBack()
+    {
+        if(activeMenu != null)
+        {
+            if (previousMenu != null)
+            {
+                activeMenu.SetActive(false);
+                previousMenu.SetActive(true);
+                activeMenu = previousMenu;
+                MenuChange(activeMenu.name);
+            }
+            if (previousMenu == null)
+            {
+                activeMenu.SetActive(false);
+                activeMenu = null;
+            }
+        }
+
+    }
+
+    void MenuFlow()
+    {
+        if (activeMenu == PauseMenu)
+            previousMenu = null;
+        if (activeMenu == ControlsMenu)
+            previousMenu = PauseMenu;
+    }
+
+    public void Webpage(string url)
+    {
+        Application.OpenURL(url);
+    }
+
+    public void SetInfo(string Model)
+    {
+        infoText[0].text = "Model: " + Model;
     }
 }
