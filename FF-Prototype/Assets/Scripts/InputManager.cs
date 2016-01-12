@@ -11,12 +11,16 @@ public class InputManager : MonoBehaviour
     bool time;
     float animTimer = 0;
 
-    public bool MenuDirty = false;
+    public bool rotateLeft;
+    public bool rotateRight;
+
+    bool MenuDirty = false;
 
     void Update()
     {
         AnimationControls();
         GeneralControls();
+        RotateControls();
         Timer();
     }
 
@@ -26,6 +30,28 @@ public class InputManager : MonoBehaviour
         {
             animTimer += Time.deltaTime * 1;
         }
+    }
+
+    void RotateControls()
+    {
+        float h = Input.GetAxis("Horizontal");
+        if (h > 0.5)
+        {
+            rotateLeft = true;
+        }
+        else
+        {
+            rotateLeft = false;
+        }
+        if(h < -0.5)
+        {
+            rotateRight = true;
+        }
+        else
+        {
+            rotateRight = false;
+        }
+        
     }
 
     void GeneralControls()
