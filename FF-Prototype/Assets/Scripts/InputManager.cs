@@ -11,17 +11,22 @@ public class InputManager : MonoBehaviour
     bool time;
     float animTimer = 0;
 
-    public bool rotateLeft;
-    public bool rotateRight;
-
-    bool MenuDirty = false;
+    static bool Pause = false;
 
     void Update()
     {
+        float h = Input.GetAxis("Horizontal");
         AnimationControls();
         GeneralControls();
-        RotateControls();
+        Left(h);
+        Right(h);
         Timer();
+        if (GUIManager.activeMenu == null)
+            Pause = false;
+        else
+            Pause = true;
+
+        SetTheInfo();
     }
 
     void Timer()
@@ -32,41 +37,46 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    void RotateControls()
+    public static bool Left(float h)
     {
-        float h = Input.GetAxis("Horizontal");
         if (h > 0.5)
         {
-            rotateLeft = true;
+            return true;
         }
         else
         {
-            rotateLeft = false;
+            return false;
         }
-        if(h < -0.5)
+    }
+
+    public static bool Right(float h)
+    {
+        if (h < -0.5)
         {
-            rotateRight = true;
+            return true;
         }
         else
         {
-            rotateRight = false;
+            return false;
         }
-        
     }
 
     void GeneralControls()
     {
         if (Input.GetKeyDown(KeyCode.JoystickButton7))
         {
-            GUIManager.PauseMenu.SetActive(!MenuDirty);
-            MenuDirty = !MenuDirty;
-            GUIManager.MenuActivated(GUIManager.PauseMenu);
+            GUIManager.MenuChange("_pause");
+        }
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton1))
+        {
+            GUIManager.GoBack();
         }
     }
 
     void AnimationControls()
     {
-        if (MenuDirty != true)
+        if (Pause == false && ActiveModel != null)
         {
             //Jab
             if (Input.GetKeyDown(KeyCode.JoystickButton0))
@@ -90,5 +100,10 @@ public class InputManager : MonoBehaviour
             }
         }
 
+    }
+
+    void SetTheInfo()
+    {
+        GUIManager.SetInfo(ActiveModel.name);
     }
 }
