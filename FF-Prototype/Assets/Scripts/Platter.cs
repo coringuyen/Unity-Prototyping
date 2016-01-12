@@ -6,6 +6,13 @@ public class Platter : MonoBehaviour
 {
     bool canPress = true;
     public List<GameObject> chars;
+    public GameObject currentCharacter;
+    
+    void Awake()
+    {
+        if (currentCharacter == null)
+            currentCharacter = chars[charsIndex];
+    }
     [ContextMenu("CirclePlace")]
     void CirclePlace()
     {
@@ -38,6 +45,25 @@ public class Platter : MonoBehaviour
         foreach (GameObject go in chars)
             go.transform.position = Vector3.zero;
     }
+    private int charsIndex = 0;
+    int getIndex(Direction d)
+    {
+        
+        if (d == Direction.RIGHT)
+        {
+            
+            charsIndex -= 1;
+            if (charsIndex < 0)
+                charsIndex = chars.Count - 1;
+        }
+        if (d == Direction.LEFT)
+        {
+            charsIndex += 1;
+            if (charsIndex > chars.Count - 1)
+                charsIndex = 0;
+        }
+        return charsIndex;
+    }
 
     void Update()
     {
@@ -45,14 +71,17 @@ public class Platter : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
+                
                 canPress = false;
                 dir = Direction.LEFT;
+                currentCharacter = chars[getIndex(dir)];
                 StartCoroutine(RotatePlatter(dir));
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 canPress = false;
                 dir = Direction.RIGHT;
+                currentCharacter = chars[getIndex(dir)];
                 StartCoroutine(RotatePlatter(dir));
             }
         }
