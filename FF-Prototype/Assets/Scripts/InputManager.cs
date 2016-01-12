@@ -4,15 +4,29 @@ using System.IO;
 
 public class InputManager : MonoBehaviour
 {
-    public GameObject ActiveModel;
+    public static GameObject ActiveModel
+    {
+        get
+        {
+            return activeModel;
+        }
+        set
+        {
+            activeModel = value;
+            
+        }
+    }
+
+    private static GameObject activeModel;
+
 
     public ShowcaseUI GUIManager;
 
     bool time;
     float animTimer = 0;
 
-    public bool rotateLeft;
-    public bool rotateRight;
+    public static bool rotateLeft;
+    public static bool rotateRight;
 
     bool MenuDirty = false;
 
@@ -20,8 +34,14 @@ public class InputManager : MonoBehaviour
     {
         AnimationControls();
         GeneralControls();
-        RotateControls();
+        
         Timer();
+    }
+
+    void FixedUpdate()
+    {
+        float h = Input.GetAxis("Horizontal");
+        RotateControls(h);
     }
 
     void Timer()
@@ -31,10 +51,10 @@ public class InputManager : MonoBehaviour
             animTimer += Time.deltaTime * 1;
         }
     }
-
-    void RotateControls()
+ 
+    void RotateControls(float h)
     {
-        float h = Input.GetAxis("Horizontal");
+        
         if (h > 0.5)
         {
             rotateLeft = true;

@@ -11,7 +11,10 @@ public class Platter : MonoBehaviour
     void Awake()
     {
         if (currentCharacter == null)
+        {
+
             currentCharacter = chars[charsIndex];
+        }
     }
     [ContextMenu("CirclePlace")]
     void CirclePlace()
@@ -47,16 +50,14 @@ public class Platter : MonoBehaviour
     }
     private int charsIndex = 0;
     int getIndex(Direction d)
-    {
-        
-        if (d == Direction.RIGHT)
-        {
-            
+    { 
+        if (d == Direction.LEFT)
+        {            
             charsIndex -= 1;
             if (charsIndex < 0)
                 charsIndex = chars.Count - 1;
         }
-        if (d == Direction.LEFT)
+        else if (d == Direction.RIGHT)
         {
             charsIndex += 1;
             if (charsIndex > chars.Count - 1)
@@ -69,36 +70,35 @@ public class Platter : MonoBehaviour
     {
         if (canPress)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || InputManager.rotateLeft )
+            {                
                 canPress = false;
-                dir = Direction.LEFT;
-                currentCharacter = chars[getIndex(dir)];
-                StartCoroutine(RotatePlatter(dir));
+                currentCharacter = SetChar(Direction.LEFT);
+                InputManager.ActiveModel = currentCharacter;
+                StartCoroutine(RotatePlatter(Direction.LEFT));
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetKeyDown(KeyCode.RightArrow) ||InputManager.rotateRight)
             {
-                canPress = false;
-                dir = Direction.RIGHT;
-                currentCharacter = chars[getIndex(dir)];
-                StartCoroutine(RotatePlatter(dir));
+                canPress = false;                
+                currentCharacter = SetChar(Direction.RIGHT);
+                InputManager.ActiveModel = currentCharacter;
+                StartCoroutine(RotatePlatter(Direction.RIGHT));
             }
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Debug.Log(transform.rotation.y);
-            Debug.Log(transform.rotation.eulerAngles.y);
-        }
+ 
     }
-
+    GameObject SetChar(Direction d)
+    {
+        
+        return chars[getIndex(d)];
+        
+    }
     enum Direction
     {
         LEFT,
         RIGHT,
     }
-
-    Direction dir = Direction.RIGHT;
+     
 
     IEnumerator RotatePlatter(Direction d)
     {
@@ -107,38 +107,29 @@ public class Platter : MonoBehaviour
         Debug.Log("Start rotation is " + start);
         float dest = 0.0f;
         if (d == Direction.RIGHT)
-            dest = start + rotAngle * (180.0f / Mathf.PI);
-        else if (d == Direction.LEFT)
             dest = start - rotAngle * (180.0f / Mathf.PI);
-        float timer = 0.0f;
-        Debug.Log("rotate from " + start + " to " + dest);
+        if (d == Direction.LEFT)
+            dest = start + rotAngle * (180.0f / Mathf.PI);
+        //Debug.Log("rotate from " + start + " to " + dest);
         while (start != dest)
         {
-            timer += Time.deltaTime;
-            start = Mathf.Lerp(start, dest, Time.deltaTime * 5.0f);
+            start = Mathf.LerpAngle(start, dest, Time.deltaTime * 5.0f);
             transform.eulerAngles = new Vector3(0, start, 0);
 
-
-            if (Mathf.Abs(dest) - Mathf.Abs(start) <= .5f)
+            if (Mathf.Abs(dest-start) <= .5f)
             {
                 start = dest;
                 break;
-
-
             }
-            print("in routine");
+            //print("in routine");
             yield return null;
         }
+
         transform.eulerAngles = new Vector3(0, dest, 0);
         print("coroutine done");
         canPress = true;
+
         yield return null;
-
-
-
-
-
-
     }
 
     void Start()
