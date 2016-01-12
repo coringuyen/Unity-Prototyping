@@ -4,7 +4,19 @@ using System.IO;
 
 public class InputManager : MonoBehaviour
 {
-    public GameObject ActiveModel;
+    public static GameObject ActiveModel
+    {
+        get
+        {
+            return activeModel;
+        }
+        set
+        {
+            activeModel = value;
+
+        }
+    }
+    private static GameObject activeModel;
 
     public ShowcaseUI GUIManager;
 
@@ -12,15 +24,14 @@ public class InputManager : MonoBehaviour
     float animTimer = 0;
 
     static bool Pause = false;
-
+    
     void Update()
     {
         float h = Input.GetAxis("Horizontal");
         AnimationControls();
         GeneralControls();
-        Left(h);
-        Right(h);
-        Timer();
+        AxisDir(h);
+        Timer();        
         if (GUIManager.activeMenu == null)
             Pause = false;
         else
@@ -31,35 +42,41 @@ public class InputManager : MonoBehaviour
 
     void Timer()
     {
-        if(time == true)
+        if (time == true)
         {
             animTimer += Time.deltaTime * 1;
         }
     }
-
-    public static bool Left(float h)
+    public static bool Left, Right;
+    private void AxisDir(float h)
     {
         if (h > 0.5)
         {
-            return true;
+            Left = true;
+            Right = false;
         }
         else
         {
-            return false;
+            Left = false;
         }
-    }
-
-    public static bool Right(float h)
-    {
+    
+        
         if (h < -0.5)
         {
-            return true;
+            Left = false;
+            Right = true;    
         }
         else
         {
-            return false;
+            Right = false;
         }
+      
+      
+        
+        
+        
     }
+ 
 
     void GeneralControls()
     {
@@ -104,6 +121,7 @@ public class InputManager : MonoBehaviour
 
     void SetTheInfo()
     {
-        GUIManager.SetInfo(ActiveModel.name);
+        if(activeModel != null)
+            GUIManager.SetInfo(ActiveModel.name);
     }
 }

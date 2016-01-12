@@ -70,14 +70,14 @@ public class Platter : MonoBehaviour
     {
         if (canPress)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow) || InputManager.rotateLeft )
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || InputManager.Left )
             {                
                 canPress = false;
                 currentCharacter = SetChar(Direction.LEFT);
                 InputManager.ActiveModel = currentCharacter;
                 StartCoroutine(RotatePlatter(Direction.LEFT));
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow) ||InputManager.rotateRight)
+            else if (Input.GetKeyDown(KeyCode.RightArrow) ||InputManager.Right)
             {
                 canPress = false;                
                 currentCharacter = SetChar(Direction.RIGHT);
