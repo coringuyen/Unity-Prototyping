@@ -31,7 +31,7 @@ namespace gui
 
         [SerializeField]
         private UnityEngine.UI.Text _partyInfo;
-
+		bool game = false;
 
         /// <summary>
         /// subscribe to combat and gui events then turn everything off
@@ -40,11 +40,12 @@ namespace gui
         {
             Subscribe<string>(MessageLayer.COMBAT, "enter state", OnCombatChange);
             Subscribe<Unit.CombatUnit>(MessageLayer.UNIT, "Unit Change", OnUnitChange);
-
-            _beginPanel.SetActive(false);
-            _combatPanel.SetActive(false);
-            _resolvePanel.SetActive(false);
-
+			if (game)
+			{
+				_beginPanel.SetActive (false);
+				_combatPanel.SetActive (false);
+				_resolvePanel.SetActive (false);
+			}
             CombatSystem.OnCombatStart += OnCombatStart;
         }
 
