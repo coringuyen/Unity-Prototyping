@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: c281876eb902a7b4c80faa6f615a50e0
-timeCreated: 1445154763
+guid: 0da405e8077f7a243b3767e77ff716e4
+timeCreated: 1464385384
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    8900000: generatedCubemap
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -20,23 +21,23 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
-  grayScaleToAlpha: 1
-  generateCubemap: 0
-  cubemapConvolution: 0
-  cubemapConvolutionSteps: 8
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 1
+  cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
-  seamlessCubemap: 0
+  seamlessCubemap: 1
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
-    mipBias: -1
-    wrapMode: -1
+    filterMode: 2
+    aniso: 0
+    mipBias: 0
+    wrapMode: 1
   nPOTScale: 1
   lightmap: 0
   rGBM: 0
-  compressionQuality: 50
+  compressionQuality: 100
   allowsAlphaSplitting: 0
   spriteMode: 0
   spriteExtrude: 1
@@ -46,7 +47,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 0
-  textureType: -1
+  textureType: 3
   buildTargetSettings: []
   spriteSheet:
     sprites: []

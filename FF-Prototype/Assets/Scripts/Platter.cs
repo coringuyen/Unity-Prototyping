@@ -19,7 +19,7 @@ public class Platter : MonoBehaviour
     [ContextMenu("CirclePlace")]
     void CirclePlace()
     {
-        int numChars = chars.Count;
+        
 
         float angle = 0.0f;
 
