@@ -32,7 +32,7 @@ using UnityEngine;
 				
 				
                 // use the values to move the character
-                character.Move(agent.desiredVelocity, false, false);
+                character.Move(agent.desiredVelocity * .2f, false, false);
             }
             else
             {
