@@ -1,0 +1,1235 @@
+fileFormatVersion: 2
+guid: dcc9845e6387011419875492f1191e23
+timeCreated: 1464382771
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: tavernKeeper_all_GRP
+    100004: tavernKeeper_body_GRP
+    100006: tavernKeeper_hairTuft_01_AuxSHJnt
+    100008: tavernKeeper_hairTuft_02_AuxSHJnt
+    100010: tavernKeeper_hairTuft_03_AuxSHJnt
+    100012: tavernKeeper_hairTuft_root_AuxSHJnt
+    100014: tavernKeeper_Head_JawEndSHJnt
+    100016: tavernKeeper_Head_JawSHJnt
+    100018: tavernKeeper_Head_TopSHJnt
+    100020: tavernKeeper_l_Arm_ClavicleSHJnt
+    100022: tavernKeeper_l_Arm_ElbowSHJnt
+    100024: tavernKeeper_l_Arm_ShoulderSHJnt
+    100026: tavernKeeper_l_Arm_WristSHJnt
+    100028: tavernKeeper_l_Eye_01SHJnt
+    100030: tavernKeeper_l_eyebrow_01_AuxSHJnt
+    100032: tavernKeeper_l_eyebrow_02_AuxSHJnt
+    100034: tavernKeeper_l_eyebrow_03_AuxSHJnt
+    100036: tavernKeeper_l_Finger_01_01SHJnt
+    100038: tavernKeeper_l_Finger_01_02SHJnt
+    100040: tavernKeeper_l_Finger_01_03SHJnt
+    100042: tavernKeeper_l_Finger_01_04SHJnt
+    100044: tavernKeeper_l_Finger_02_01SHJnt
+    100046: tavernKeeper_l_Finger_02_02SHJnt
+    100048: tavernKeeper_l_Finger_02_03SHJnt
+    100050: tavernKeeper_l_Finger_02_04SHJnt
+    100052: tavernKeeper_l_Finger_03_01SHJnt
+    100054: tavernKeeper_l_Finger_03_02SHJnt
+    100056: tavernKeeper_l_Finger_03_03SHJnt
+    100058: tavernKeeper_l_Finger_03_04SHJnt
+    100060: tavernKeeper_l_Finger_04_01SHJnt
+    100062: tavernKeeper_l_Finger_04_02SHJnt
+    100064: tavernKeeper_l_Finger_04_03SHJnt
+    100066: tavernKeeper_l_Finger_04_04SHJnt
+    100068: tavernKeeper_l_Leg_AnkleSHJnt
+    100070: tavernKeeper_l_Leg_BallSHJnt
+    100072: tavernKeeper_l_Leg_HipSHJnt
+    100074: tavernKeeper_l_Leg_KneeSHJnt
+    100076: tavernKeeper_l_Leg_ToeSHJnt
+    100078: tavernKeeper_l_moustache_01_01SHJnt
+    100080: tavernKeeper_l_moustache_01_02SHJnt
+    100082: tavernKeeper_l_moustache_01_03SHJnt
+    100084: tavernKeeper_l_Thumb_01_01SHJnt
+    100086: tavernKeeper_l_Thumb_01_02SHJnt
+    100088: tavernKeeper_l_Thumb_01_03SHJnt
+    100090: tavernKeeper_l_Thumb_01_04SHJnt
+    100092: tavernKeeper_MAINSHJnt
+    100094: tavernKeeper_Neck_01SHJnt
+    100096: tavernKeeper_Neck_02SHJnt
+    100098: tavernKeeper_Neck_TopSHJnt
+    100100: tavernKeeper_objects_GRP
+    100102: tavernKeeper_r_Arm_ClavicleSHJnt
+    100104: tavernKeeper_r_Arm_ElbowSHJnt
+    100106: tavernKeeper_r_Arm_ShoulderSHJnt
+    100108: tavernKeeper_r_Arm_WristSHJnt
+    100110: tavernKeeper_r_Eye_01SHJnt
+    100112: tavernKeeper_r_eyebrow_01_AuxSHJnt
+    100114: tavernKeeper_r_eyebrow_02_AuxSHJnt
+    100116: tavernKeeper_r_eyebrow_03_AuxSHJnt
+    100118: tavernKeeper_r_Finger_01_01SHJnt
+    100120: tavernKeeper_r_Finger_01_02SHJnt
+    100122: tavernKeeper_r_Finger_01_03SHJnt
+    100124: tavernKeeper_r_Finger_01_04SHJnt
+    100126: tavernKeeper_r_Finger_02_01SHJnt
+    100128: tavernKeeper_r_Finger_02_02SHJnt
+    100130: tavernKeeper_r_Finger_02_03SHJnt
+    100132: tavernKeeper_r_Finger_02_04SHJnt
+    100134: tavernKeeper_r_Finger_03_01SHJnt
+    100136: tavernKeeper_r_Finger_03_02SHJnt
+    100138: tavernKeeper_r_Finger_03_03SHJnt
+    100140: tavernKeeper_r_Finger_03_04SHJnt
+    100142: tavernKeeper_r_Finger_04_01SHJnt
+    100144: tavernKeeper_r_Finger_04_02SHJnt
+    100146: tavernKeeper_r_Finger_04_03SHJnt
+    100148: tavernKeeper_r_Finger_04_04SHJnt
+    100150: tavernKeeper_r_Leg_AnkleSHJnt
+    100152: tavernKeeper_r_Leg_BallSHJnt
+    100154: tavernKeeper_r_Leg_HipSHJnt
+    100156: tavernKeeper_r_Leg_KneeSHJnt
+    100158: tavernKeeper_r_Leg_ToeSHJnt
+    100160: tavernKeeper_r_moustache_01_01SHJnt
+    100162: tavernKeeper_r_moustache_01_02SHJnt
+    100164: tavernKeeper_r_moustache_01_03SHJnt
+    100166: tavernKeeper_r_Thumb_01_01SHJnt
+    100168: tavernKeeper_r_Thumb_01_02SHJnt
+    100170: tavernKeeper_r_Thumb_01_03SHJnt
+    100172: tavernKeeper_r_Thumb_01_04SHJnt
+    100174: tavernKeeper_ROOTSHJnt
+    100176: tavernKeeper_SHJntGrp
+    100178: tavernKeeper_shoulderGuard_AuxSHJnt
+    100180: tavernKeeper_Spine_01SHJnt
+    100182: tavernKeeper_Spine_02SHJnt
+    100184: tavernKeeper_Spine_03SHJnt
+    100186: tavernKeeper_Spine_04SHJnt
+    100188: tavernKeeper_Spine_TopSHJnt
+    100190: tk_armBracer_mesh
+    100192: tk_body_mesh
+    100194: tk_eyebrows_mesh
+    100196: tk_hairTuft_mesh
+    100198: tk_moustache_mesh
+    100200: tk_pants_mesh
+    100202: tk_shirt_mesh
+    100204: tk_shoulderGuard_mesh
+    100206: tk_shoulderStrap_all_mesh
+    100208: tk_wrestlingBelt_all_mesh
+    400000: //RootNode
+    400002: tavernKeeper_all_GRP
+    400004: tavernKeeper_body_GRP
+    400006: tavernKeeper_hairTuft_01_AuxSHJnt
+    400008: tavernKeeper_hairTuft_02_AuxSHJnt
+    400010: tavernKeeper_hairTuft_03_AuxSHJnt
+    400012: tavernKeeper_hairTuft_root_AuxSHJnt
+    400014: tavernKeeper_Head_JawEndSHJnt
+    400016: tavernKeeper_Head_JawSHJnt
+    400018: tavernKeeper_Head_TopSHJnt
+    400020: tavernKeeper_l_Arm_ClavicleSHJnt
+    400022: tavernKeeper_l_Arm_ElbowSHJnt
+    400024: tavernKeeper_l_Arm_ShoulderSHJnt
+    400026: tavernKeeper_l_Arm_WristSHJnt
+    400028: tavernKeeper_l_Eye_01SHJnt
+    400030: tavernKeeper_l_eyebrow_01_AuxSHJnt
+    400032: tavernKeeper_l_eyebrow_02_AuxSHJnt
+    400034: tavernKeeper_l_eyebrow_03_AuxSHJnt
+    400036: tavernKeeper_l_Finger_01_01SHJnt
+    400038: tavernKeeper_l_Finger_01_02SHJnt
+    400040: tavernKeeper_l_Finger_01_03SHJnt
+    400042: tavernKeeper_l_Finger_01_04SHJnt
+    400044: tavernKeeper_l_Finger_02_01SHJnt
+    400046: tavernKeeper_l_Finger_02_02SHJnt
+    400048: tavernKeeper_l_Finger_02_03SHJnt
+    400050: tavernKeeper_l_Finger_02_04SHJnt
+    400052: tavernKeeper_l_Finger_03_01SHJnt
+    400054: tavernKeeper_l_Finger_03_02SHJnt
+    400056: tavernKeeper_l_Finger_03_03SHJnt
+    400058: tavernKeeper_l_Finger_03_04SHJnt
+    400060: tavernKeeper_l_Finger_04_01SHJnt
+    400062: tavernKeeper_l_Finger_04_02SHJnt
+    400064: tavernKeeper_l_Finger_04_03SHJnt
+    400066: tavernKeeper_l_Finger_04_04SHJnt
+    400068: tavernKeeper_l_Leg_AnkleSHJnt
+    400070: tavernKeeper_l_Leg_BallSHJnt
+    400072: tavernKeeper_l_Leg_HipSHJnt
+    400074: tavernKeeper_l_Leg_KneeSHJnt
+    400076: tavernKeeper_l_Leg_ToeSHJnt
+    400078: tavernKeeper_l_moustache_01_01SHJnt
+    400080: tavernKeeper_l_moustache_01_02SHJnt
+    400082: tavernKeeper_l_moustache_01_03SHJnt
+    400084: tavernKeeper_l_Thumb_01_01SHJnt
+    400086: tavernKeeper_l_Thumb_01_02SHJnt
+    400088: tavernKeeper_l_Thumb_01_03SHJnt
+    400090: tavernKeeper_l_Thumb_01_04SHJnt
+    400092: tavernKeeper_MAINSHJnt
+    400094: tavernKeeper_Neck_01SHJnt
+    400096: tavernKeeper_Neck_02SHJnt
+    400098: tavernKeeper_Neck_TopSHJnt
+    400100: tavernKeeper_objects_GRP
+    400102: tavernKeeper_r_Arm_ClavicleSHJnt
+    400104: tavernKeeper_r_Arm_ElbowSHJnt
+    400106: tavernKeeper_r_Arm_ShoulderSHJnt
+    400108: tavernKeeper_r_Arm_WristSHJnt
+    400110: tavernKeeper_r_Eye_01SHJnt
+    400112: tavernKeeper_r_eyebrow_01_AuxSHJnt
+    400114: tavernKeeper_r_eyebrow_02_AuxSHJnt
+    400116: tavernKeeper_r_eyebrow_03_AuxSHJnt
+    400118: tavernKeeper_r_Finger_01_01SHJnt
+    400120: tavernKeeper_r_Finger_01_02SHJnt
+    400122: tavernKeeper_r_Finger_01_03SHJnt
+    400124: tavernKeeper_r_Finger_01_04SHJnt
+    400126: tavernKeeper_r_Finger_02_01SHJnt
+    400128: tavernKeeper_r_Finger_02_02SHJnt
+    400130: tavernKeeper_r_Finger_02_03SHJnt
+    400132: tavernKeeper_r_Finger_02_04SHJnt
+    400134: tavernKeeper_r_Finger_03_01SHJnt
+    400136: tavernKeeper_r_Finger_03_02SHJnt
+    400138: tavernKeeper_r_Finger_03_03SHJnt
+    400140: tavernKeeper_r_Finger_03_04SHJnt
+    400142: tavernKeeper_r_Finger_04_01SHJnt
+    400144: tavernKeeper_r_Finger_04_02SHJnt
+    400146: tavernKeeper_r_Finger_04_03SHJnt
+    400148: tavernKeeper_r_Finger_04_04SHJnt
+    400150: tavernKeeper_r_Leg_AnkleSHJnt
+    400152: tavernKeeper_r_Leg_BallSHJnt
+    400154: tavernKeeper_r_Leg_HipSHJnt
+    400156: tavernKeeper_r_Leg_KneeSHJnt
+    400158: tavernKeeper_r_Leg_ToeSHJnt
+    400160: tavernKeeper_r_moustache_01_01SHJnt
+    400162: tavernKeeper_r_moustache_01_02SHJnt
+    400164: tavernKeeper_r_moustache_01_03SHJnt
+    400166: tavernKeeper_r_Thumb_01_01SHJnt
+    400168: tavernKeeper_r_Thumb_01_02SHJnt
+    400170: tavernKeeper_r_Thumb_01_03SHJnt
+    400172: tavernKeeper_r_Thumb_01_04SHJnt
+    400174: tavernKeeper_ROOTSHJnt
+    400176: tavernKeeper_SHJntGrp
+    400178: tavernKeeper_shoulderGuard_AuxSHJnt
+    400180: tavernKeeper_Spine_01SHJnt
+    400182: tavernKeeper_Spine_02SHJnt
+    400184: tavernKeeper_Spine_03SHJnt
+    400186: tavernKeeper_Spine_04SHJnt
+    400188: tavernKeeper_Spine_TopSHJnt
+    400190: tk_armBracer_mesh
+    400192: tk_body_mesh
+    400194: tk_eyebrows_mesh
+    400196: tk_hairTuft_mesh
+    400198: tk_moustache_mesh
+    400200: tk_pants_mesh
+    400202: tk_shirt_mesh
+    400204: tk_shoulderGuard_mesh
+    400206: tk_shoulderStrap_all_mesh
+    400208: tk_wrestlingBelt_all_mesh
+    4300000: tk_body_mesh
+    4300002: tk_hairTuft_mesh
+    4300004: tk_eyebrows_mesh
+    4300006: tk_moustache_mesh
+    4300008: tk_shirt_mesh
+    4300010: tk_pants_mesh
+    4300012: tk_shoulderGuard_mesh
+    4300014: tk_armBracer_mesh
+    4300016: tk_shoulderStrap_all_mesh
+    4300018: tk_wrestlingBelt_all_mesh
+    9500000: //RootNode
+    13700000: tk_armBracer_mesh
+    13700002: tk_body_mesh
+    13700004: tk_eyebrows_mesh
+    13700006: tk_hairTuft_mesh
+    13700008: tk_moustache_mesh
+    13700010: tk_pants_mesh
+    13700012: tk_shirt_mesh
+    13700014: tk_shoulderGuard_mesh
+    13700016: tk_shoulderStrap_all_mesh
+    13700018: tk_wrestlingBelt_all_mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: tavernKeeper_ROOTSHJnt
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Leg_HipSHJnt
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Leg_HipSHJnt
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Leg_KneeSHJnt
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Leg_KneeSHJnt
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Leg_AnkleSHJnt
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Leg_AnkleSHJnt
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_Spine_01SHJnt
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_Spine_03SHJnt
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_Neck_01SHJnt
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_Neck_TopSHJnt
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Arm_ClavicleSHJnt
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Arm_ClavicleSHJnt
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Arm_ShoulderSHJnt
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Arm_ShoulderSHJnt
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Arm_ElbowSHJnt
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Arm_ElbowSHJnt
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Arm_WristSHJnt
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Arm_WristSHJnt
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Leg_BallSHJnt
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Leg_BallSHJnt
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Eye_01SHJnt
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Eye_01SHJnt
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_Head_JawSHJnt
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Thumb_01_01SHJnt
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Thumb_01_02SHJnt
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Thumb_01_03SHJnt
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Finger_01_01SHJnt
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Finger_01_02SHJnt
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Finger_01_03SHJnt
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Finger_02_01SHJnt
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Finger_02_02SHJnt
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Finger_02_03SHJnt
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Finger_03_01SHJnt
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Finger_03_02SHJnt
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Finger_03_03SHJnt
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Finger_04_01SHJnt
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_l_Finger_04_02SHJnt
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Thumb_01_01SHJnt
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Thumb_01_02SHJnt
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Thumb_01_03SHJnt
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Finger_01_01SHJnt
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Finger_01_02SHJnt
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Finger_01_03SHJnt
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Finger_02_01SHJnt
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Finger_02_02SHJnt
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Finger_02_03SHJnt
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Finger_03_01SHJnt
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Finger_03_02SHJnt
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Finger_04_01SHJnt
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tavernKeeper_r_Finger_04_02SHJnt
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: tavernkeeper(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_all_GRP
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_body_GRP
+      position: {x: -0, y: -0.0075549297, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tk_body_mesh
+      position: {x: -0, y: 0.0075549297, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tk_eyebrows_mesh
+      position: {x: -0, y: 0.0075549297, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tk_hairTuft_mesh
+      position: {x: -0, y: 0.0075549297, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tk_moustache_mesh
+      position: {x: -0, y: 0.0075549297, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tk_pants_mesh
+      position: {x: -0, y: 0.0075549297, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tk_shirt_mesh
+      position: {x: -0, y: 0.0075549297, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_objects_GRP
+      position: {x: -0, y: -0.0075549297, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tk_armBracer_mesh
+      position: {x: -0, y: 0.0075549297, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tk_shoulderGuard_mesh
+      position: {x: -0, y: 0.0075549297, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tk_shoulderStrap_all_mesh
+      position: {x: -0, y: 0.0075549297, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tk_wrestlingBelt_all_mesh
+      position: {x: -0, y: 0.0075549297, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_SHJntGrp
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_MAINSHJnt
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_ROOTSHJnt
+      position: {x: -3.1554436e-32, y: 0.56946546, z: 7.888609e-33}
+      rotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_Spine_01SHJnt
+      position: {x: -0.07811169, y: 0.006569984, z: 3.4364438e-17}
+      rotation: {x: 1.6653345e-16, y: 1.6653345e-16, z: -0.05855467, w: 0.9982842}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_Spine_02SHJnt
+      position: {x: -0.08020688, y: 0.01856243, z: 2.6562429e-17}
+      rotation: {x: 2.7755576e-16, y: 2.220446e-16, z: 0.11532162, w: 0.9933282}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_Spine_03SHJnt
+      position: {x: -0.07789453, y: 0.018652942, z: 3.1041273e-17}
+      rotation: {x: 1.9428904e-16, y: 1.3877789e-16, z: -0.00056645175, w: 0.9999999}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_Spine_04SHJnt
+      position: {x: -0.076559, y: 0.00561635, z: 3.2336737e-17}
+      rotation: {x: 2.2204463e-16, y: 1.9428904e-16, z: -0.10078675, w: 0.9949081}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_Spine_TopSHJnt
+      position: {x: -0.0757299, y: -0.04794022, z: 4.9872906e-17}
+      rotation: {x: 2.7755576e-16, y: 1.6653345e-16, z: 0.044519298, w: 0.99900854}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_Neck_01SHJnt
+      position: {x: -0.029659662, y: 1.2794097e-17, z: 1.2858021e-17}
+      rotation: {x: 2.220446e-16, y: 2.220446e-16, z: 2.220446e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_Neck_02SHJnt
+      position: {x: -0.029659662, y: -1.4406366e-17, z: 1.3171536e-17}
+      rotation: {x: 2.220446e-16, y: 2.220446e-16, z: 2.220446e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_Neck_TopSHJnt
+      position: {x: -0.029659662, y: -1.4961479e-17, z: 1.3171536e-17}
+      rotation: {x: 2.220446e-16, y: 2.220446e-16, z: 2.220446e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_Head_JawSHJnt
+      position: {x: -0.05338739, y: -0.008897898, z: 3.911946e-16}
+      rotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_Head_JawEndSHJnt
+      position: {x: -2.2511641e-17, y: -0.08110673, z: 0.08505372}
+      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_Head_TopSHJnt
+      position: {x: -0.10677478, y: -5.186292e-17, z: 1.1162876e-16}
+      rotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_eyebrow_01_AuxSHJnt
+      position: {x: -0.020537933, y: -0.03416494, z: 0.10741692}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_eyebrow_02_AuxSHJnt
+      position: {x: -0.03962783, y: 0.012218655, z: 0.0017398918}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_eyebrow_03_AuxSHJnt
+      position: {x: -0.013933599, y: -0.0059321714, z: -0.029280001}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Eye_01SHJnt
+      position: {x: -0.03559159, y: -0.03559159, z: 0.06083938}
+      rotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Eye_01SHJnt
+      position: {x: 0.03559159, y: -0.03559159, z: 0.06083938}
+      rotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_eyebrow_01_AuxSHJnt
+      position: {x: 0.020537933, y: -0.03416494, z: 0.10741692}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_eyebrow_02_AuxSHJnt
+      position: {x: 0.03962783, y: 0.012218655, z: 0.0017398918}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_eyebrow_03_AuxSHJnt
+      position: {x: 0.013933599, y: -0.0059321714, z: -0.029280001}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_hairTuft_root_AuxSHJnt
+      position: {x: -5.7227386e-17, y: 0.10929616, z: 0.029388243}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_hairTuft_01_AuxSHJnt
+      position: {x: 0.00915902, y: 0.026274487, z: -0.016144592}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_hairTuft_02_AuxSHJnt
+      position: {x: -0.029146012, y: 0.03605359, z: -0.02767585}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_hairTuft_03_AuxSHJnt
+      position: {x: -0.032425214, y: 0.006107472, z: -0.034563158}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_moustache_01_01SHJnt
+      position: {x: -0.022902995, y: -0.10294632, z: 0.13477539}
+      rotation: {x: 0.6247446, y: 0.15330009, z: 0.20869772, w: 0.73664004}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_moustache_01_02SHJnt
+      position: {x: -0.03787503, y: -0.012380026, z: -0.0048228414}
+      rotation: {x: -0.116122305, y: -0.035443477, z: 0.2897701, w: 0.94936436}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_moustache_01_03SHJnt
+      position: {x: -0.07360835, y: -0.04513691, z: -0.0015307406}
+      rotation: {x: -0.0782808, y: 0.09579498, z: -0.27979434, w: 0.952056}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_moustache_01_01SHJnt
+      position: {x: 0.022902995, y: -0.10294632, z: 0.13477539}
+      rotation: {x: 0.6247446, y: -0.15330009, z: -0.20869772, w: 0.73664004}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_moustache_01_02SHJnt
+      position: {x: 0.03787503, y: -0.012380026, z: -0.0048228414}
+      rotation: {x: -0.116122305, y: 0.035443477, z: -0.2897701, w: 0.94936436}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_moustache_01_03SHJnt
+      position: {x: 0.07360835, y: -0.04513691, z: -0.0015307406}
+      rotation: {x: -0.019447818, y: -0.12217342, z: -0.23725365, w: 0.96353835}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Arm_ClavicleSHJnt
+      position: {x: -2.842171e-16, y: 6.888049e-18, z: -0.04448949}
+      rotation: {x: 0.46334153, y: -0.33225903, z: 0.501182, w: 0.65094936}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Arm_ShoulderSHJnt
+      position: {x: -0.097520776, y: -0.05018237, z: -0.07941934}
+      rotation: {x: 0.1523448, y: -0.14300467, z: 0.19119188, w: 0.95905495}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Arm_ElbowSHJnt
+      position: {x: -0.23156664, y: -1.4210854e-16, z: 1.4210854e-16}
+      rotation: {x: -0.0009145842, y: 0.021928681, z: -0.013141876, w: 0.9996728}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Arm_WristSHJnt
+      position: {x: -0.20500948, y: 5.684342e-16, z: -1.0658141e-16}
+      rotation: {x: -0.06641953, y: 0.008150914, z: 0.22087854, w: 0.9730029}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_01_01SHJnt
+      position: {x: -0.12505092, y: 0.0400424, z: 0.05119724}
+      rotation: {x: -0.012067891, y: 0.026595319, z: -0.31829768, w: 0.9475409}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_01_02SHJnt
+      position: {x: -0.07619379, y: -0.026502237, z: 0.00066737115}
+      rotation: {x: -0.0025884, y: 0.0033480963, z: 0.09790379, w: 0.99518687}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_01_03SHJnt
+      position: {x: -0.041474104, y: -0.007809238, z: -1.284709e-11}
+      rotation: {x: -0.00000007520428, y: 0.00000035343683, z: -0.07808662, w: 0.99694663}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_01_04SHJnt
+      position: {x: -0.065993935, y: -0.029318914, z: -2.731814e-11}
+      rotation: {x: -0.06631996, y: 0.028652605, z: 0.27997786, w: 0.9572843}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_02_01SHJnt
+      position: {x: -0.12070112, y: 0.05782991, z: 0.0062405635}
+      rotation: {x: -0.037599444, y: 0.06350229, z: -0.28881857, w: 0.95453525}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_02_02SHJnt
+      position: {x: -0.092970826, y: -0.024433522, z: -0.008313671}
+      rotation: {x: 0.051884603, y: -0.014794212, z: -0.11305751, w: 0.99212253}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_02_03SHJnt
+      position: {x: -0.032501366, y: -0.019314522, z: -0.0005689018}
+      rotation: {x: 0.004220674, y: -0.0053692986, z: 0.15146862, w: 0.98843855}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_02_04SHJnt
+      position: {x: -0.034661222, y: -0.010486535, z: -1.7006316e-11}
+      rotation: {x: 0, y: 0, z: 0.06518403, w: 0.99787325}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_03_01SHJnt
+      position: {x: -0.117635034, y: 0.055864856, z: -0.036910523}
+      rotation: {x: -0.020788785, y: 0.014584543, z: -0.39893314, w: 0.9166284}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_03_02SHJnt
+      position: {x: -0.06270514, y: -0.033624604, z: -6.801173e-12}
+      rotation: {x: -0.0029032966, y: 0.027750833, z: -0.07244026, w: 0.9969824}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_03_03SHJnt
+      position: {x: -0.028100004, y: -0.022588724, z: -0.001856185}
+      rotation: {x: 0.00385021, y: -0.005369991, z: 0.27737066, w: 0.9607403}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_03_04SHJnt
+      position: {x: -0.03405832, y: -0.0066749942, z: -0.0007980512}
+      rotation: {x: 0.0004587197, y: -0.005642925, z: 0.08207739, w: 0.99660987}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_04_01SHJnt
+      position: {x: -0.08384608, y: 0.045710072, z: -0.06443212}
+      rotation: {x: -0.05177689, y: 0.0024179933, z: -0.46127474, w: 0.885742}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_04_02SHJnt
+      position: {x: -0.06066725, y: -0.043396845, z: -1.0412116e-11}
+      rotation: {x: 0.0028156477, y: -0.06962399, z: 0.22490129, w: 0.9718868}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_04_03SHJnt
+      position: {x: -0.032589495, y: -0.00722172, z: 0.004636045}
+      rotation: {x: 0, y: 0, z: 0.26958716, w: 0.96297604}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Finger_04_04SHJnt
+      position: {x: -0.033790316, y: -0.0047554523, z: 0.0029202865}
+      rotation: {x: 0, y: 0, z: 0.04448825, w: 0.9990099}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Thumb_01_01SHJnt
+      position: {x: -0.023860788, y: -0.038946223, z: 0.032845512}
+      rotation: {x: 0.73949283, y: 0.09647112, z: -0.4501276, w: 0.49115062}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Thumb_01_02SHJnt
+      position: {x: -0.0609913, y: -0.0011654121, z: 0.00014105834}
+      rotation: {x: -0.0047798073, y: -0.02654096, z: -0.08833971, w: 0.9957253}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Thumb_01_03SHJnt
+      position: {x: -0.06195319, y: -0.016064111, z: 0.0037811617}
+      rotation: {x: 0, y: 0, z: 0.08620089, w: 0.9962778}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Thumb_01_04SHJnt
+      position: {x: -0.06953253, y: -0.0043427977, z: 0.0020071433}
+      rotation: {x: 0, y: 0, z: 0.06590435, w: 0.997826}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Arm_ClavicleSHJnt
+      position: {x: -2.842171e-16, y: 4.6402652e-17, z: 0.04448949}
+      rotation: {x: 0.5222318, y: -0.64296836, z: 0.45188907, w: 0.3311526}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_shoulderGuard_AuxSHJnt
+      position: {x: 0.138099, y: 0.07058447, z: -0.08084503}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Arm_ShoulderSHJnt
+      position: {x: 0.097520776, y: -0.05018237, z: -0.07941934}
+      rotation: {x: 0.14477794, y: 0.15546569, z: -0.17403603, w: 0.96155155}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Arm_ElbowSHJnt
+      position: {x: 0.23156664, y: -2.842171e-16, z: 3.5527136e-17}
+      rotation: {x: -0.00092220143, y: -0.019178927, z: 0.013252275, w: 0.99972785}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Arm_WristSHJnt
+      position: {x: 0.20500948, y: 4.2632563e-16, z: -2.1316282e-16}
+      rotation: {x: -0.06641953, y: -0.008150914, z: -0.22087854, w: 0.9730029}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_01_01SHJnt
+      position: {x: 0.12505092, y: 0.0400424, z: 0.05119724}
+      rotation: {x: -0.012067722, y: -0.026595298, z: 0.31829733, w: 0.94754106}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_01_02SHJnt
+      position: {x: 0.07619379, y: -0.026502237, z: 0.00066737115}
+      rotation: {x: -0.0025885776, y: -0.0033480516, z: -0.09790391, w: 0.99518687}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_01_03SHJnt
+      position: {x: 0.041474104, y: -0.007809238, z: 2.305267e-14}
+      rotation: {x: -0.00000012665978, y: -0.00000037671973, z: 0.078086935, w: 0.9969466}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_01_04SHJnt
+      position: {x: 0.065993935, y: -0.029318914, z: 4.2850167e-14}
+      rotation: {x: -0.06631996, y: -0.028652605, z: -0.27997786, w: 0.9572843}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_02_01SHJnt
+      position: {x: 0.12070112, y: 0.05782991, z: 0.0062405635}
+      rotation: {x: -0.037599295, y: -0.06350237, z: 0.2888191, w: 0.9545351}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_02_02SHJnt
+      position: {x: 0.092970826, y: -0.024433522, z: -0.008313671}
+      rotation: {x: 0.051884446, y: 0.014793542, z: 0.113057844, w: 0.99212253}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_02_03SHJnt
+      position: {x: 0.032501366, y: -0.019314522, z: -0.0005689018}
+      rotation: {x: 0.004221203, y: 0.00537, z: -0.15146871, w: 0.9884385}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_02_04SHJnt
+      position: {x: 0.034661222, y: -0.010486535, z: -5.595524e-16}
+      rotation: {x: 0, y: -0, z: -0.06518403, w: 0.99787325}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_03_01SHJnt
+      position: {x: 0.117635034, y: 0.055864856, z: -0.036910523}
+      rotation: {x: -0.020788513, y: -0.014584908, z: 0.39893335, w: 0.9166283}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_03_02SHJnt
+      position: {x: 0.06270514, y: -0.033624604, z: 4.2632563e-16}
+      rotation: {x: -0.0029027541, y: -0.027750505, z: 0.07243865, w: 0.9969825}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_03_03SHJnt
+      position: {x: 0.028100004, y: -0.022588724, z: -0.001856185}
+      rotation: {x: 0, y: -0, z: -0.3087937, w: 0.9511291}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_03_04SHJnt
+      position: {x: 0.03405832, y: -0.0066749942, z: -0.0007980512}
+      rotation: {x: 0.0004587197, y: 0.005642925, z: -0.08207739, w: 0.99660987}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_04_01SHJnt
+      position: {x: 0.08384608, y: 0.045710072, z: -0.06443212}
+      rotation: {x: -0.051776744, y: -0.0024181532, z: 0.46127495, w: 0.88574195}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_04_02SHJnt
+      position: {x: 0.06066725, y: -0.043396845, z: 2.4868996e-16}
+      rotation: {x: 0.002816049, y: 0.069625095, z: -0.224904, w: 0.9718861}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_04_03SHJnt
+      position: {x: 0.032589495, y: -0.00722172, z: 0.004636045}
+      rotation: {x: 0, y: -0, z: -0.26958716, w: 0.96297604}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Finger_04_04SHJnt
+      position: {x: 0.033790316, y: -0.0047554523, z: 0.0029202865}
+      rotation: {x: 0, y: -0, z: -0.04448825, w: 0.9990099}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Thumb_01_01SHJnt
+      position: {x: 0.023860788, y: -0.038946223, z: 0.032845512}
+      rotation: {x: 0.7388144, y: -0.095370024, z: 0.4510004, w: 0.4915856}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Thumb_01_02SHJnt
+      position: {x: 0.0609913, y: -0.0011654121, z: 0.0001410583}
+      rotation: {x: -0.0047799847, y: 0.026539879, z: 0.0883397, w: 0.9957254}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Thumb_01_03SHJnt
+      position: {x: 0.06195319, y: -0.016064111, z: 0.0037811617}
+      rotation: {x: 0, y: -0, z: -0.08620089, w: 0.9962778}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Thumb_01_04SHJnt
+      position: {x: 0.06953253, y: -0.0043427977, z: 0.0020071433}
+      rotation: {x: 0, y: -0, z: -0.06590435, w: 0.997826}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Leg_HipSHJnt
+      position: {x: 0.03559159, y: -1.7110395e-17, z: -0.104528174}
+      rotation: {x: -0.06684554, y: 0.8763162, z: -0.46142513, w: -0.121196106}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Leg_KneeSHJnt
+      position: {x: -0.25860253, y: -3.1974422e-16, z: 2.442049e-10}
+      rotation: {x: 0, y: -0.05486912, z: -0, w: 0.99849355}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Leg_AnkleSHJnt
+      position: {x: -0.2383683, y: -1.7763567e-16, z: 2.2509716e-10}
+      rotation: {x: 0.15402986, y: -0.0042217225, z: 0.117373995, w: 0.9810608}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Leg_BallSHJnt
+      position: {x: -0.028145684, y: 0.0040644426, z: 0.06700384}
+      rotation: {x: -1.7813777e-14, y: 0.70710665, z: 1.7813769e-14, w: 0.70710695}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_l_Leg_ToeSHJnt
+      position: {x: -0.05699974, y: 0.003436883, z: -0.011832048}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Leg_HipSHJnt
+      position: {x: 0.03559159, y: 3.756895e-17, z: 0.104528174}
+      rotation: {x: -0.121196106, y: -0.46142513, z: 0.8763162, w: -0.06684554}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Leg_KneeSHJnt
+      position: {x: -0.25860253, y: 1.4210854e-16, z: -3.5527136e-17}
+      rotation: {x: 0, y: -0.05486912, z: -0, w: 0.99849355}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Leg_AnkleSHJnt
+      position: {x: -0.2383683, y: 1.4210854e-16, z: 1.3500312e-14}
+      rotation: {x: -0.1540297, y: -0.0042217374, z: -0.117373906, w: 0.98106086}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Leg_BallSHJnt
+      position: {x: -0.028145684, y: -0.0040644426, z: 0.06700384}
+      rotation: {x: 1.7813779e-14, y: 0.70710665, z: -1.781377e-14, w: 0.70710695}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tavernKeeper_r_Leg_ToeSHJnt
+      position: {x: -0.05699974, y: -0.003436883, z: -0.011832048}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: tavernKeeper_ROOTSHJnt
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -21,7 +21,7 @@ public class UIButton : Observer, IPointerEnterHandler, IPointerClickHandler, IP
     public void OnPointerClick(PointerEventData eventData)
     {
         PlayAudio(a_clicked);
-        Publish(MessageLayer.GUI, "buttonclick", gameObject.name.ToLower());
+        
         Debug.Log("button click");
     }
 
