@@ -24,17 +24,16 @@ public class Platter : MonoBehaviour
         float angle = 0.0f;
 
         foreach (GameObject go in chars)
-        {
-            Debug.Log("angle is " + angle);
+        {         
             float zPos = Mathf.Cos(angle) * radius;//sin
             float xPos = Mathf.Sin(angle) * radius;//cos
             float yPos = 0.0f;
 
             Vector3 newPos = new Vector3(xPos, yPos, zPos);
-            Debug.Log("Set position to " + newPos);
+         
             go.transform.position = newPos;
             angle += rotAngle;
-            go.transform.LookAt(transform.position);
+			go.transform.LookAt(Vector3.zero);
 
         }
     }
