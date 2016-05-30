@@ -73,6 +73,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 433294}
   - 95: {fileID: 9503980}
+  - 114: {fileID: 11400894}
   m_Layer: 0
   m_Name: Pearl
   m_TagString: Untagged
@@ -248,6 +249,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11400894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f440d5eccb884540a46042c8aafc6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  resource: 0
 --- !u!137 &13706628
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -258,7 +272,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 38b9082eaa74e4e4086ae6f27632044a, type: 2}
+  - {fileID: 2100000, guid: 37135e0cf1164f3418e745d58b98f302, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -464,7 +478,57 @@ SkinnedMeshRenderer:
   m_UpdateWhenOffscreen: 0
   m_Mesh: {fileID: 4300004, guid: c9deb4c4561dc634eae431930ae151fa, type: 3}
   m_Bones: []
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: 0.00042304397, y: -0.1325075, z: -0.014225781}

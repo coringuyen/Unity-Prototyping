@@ -18,7 +18,7 @@ namespace UnityStandardAssets.Effects
         // Update is called once per frame
         private void Update()
         {
-            m_Power = Mathf.Lerp(m_Power, Input.GetMouseButton(0) ? maxPower : minPower, Time.deltaTime*changeSpeed);
+            m_Power = Mathf.Lerp(m_Power, Input.GetMouseButton(0) ? maxPower : minPower, Time.deltaTime * changeSpeed);
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -28,7 +28,8 @@ namespace UnityStandardAssets.Effects
             foreach (var system in hoseWaterSystems)
             {
                 system.startSpeed = m_Power;
-                system.enableEmission = (m_Power > minPower*1.1f);
+                system.enableEmission = (m_Power > minPower * 1.1f);
+
             }
         }
     }
