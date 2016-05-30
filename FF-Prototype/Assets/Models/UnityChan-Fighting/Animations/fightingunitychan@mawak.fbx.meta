@@ -364,7 +364,15 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nDefault bone length found in this file is different
+      form the one found in the source avatar:\n\t'Character1_LeftFoot' : position
+      error = 1.034727 mm\n\t'Character1_RightFoot' : position error = 1.035484 mm\n\t'Character1_RightHand'
+      : position error = 1.283811 mm\n\nInbetween bone default rotation found in this
+      file is different from the one found in the source avatar:\n\t'Character1_Spine'
+      : rotation error = 24.645973 deg\n\nClip 'Take 001' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Character1_Spine' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -1812,13 +1820,13 @@ ModelImporter:
     - name: J_L_SusoSide_00
       position: {x: -0.05543403, y: 0.0017306843, z: 0.098653734}
       rotation: {x: 0.09374656, y: -0.6978552, z: -0.707469, w: -0.060806725}
-      scale: {x: 1.000002, y: 1.000002, z: 1.0000008}
+      scale: {x: 1.0000023, y: 1.000002, z: 1.000001}
       transformModified: 1
     - name: J_L_SusoSide_01
       position: {x: -0.09931355, y: 0.009804863, z: 0.0015692349}
       rotation: {x: -0.000000011175871, y: -0.00000003958121, z: -0.000000029584044,
         w: 1}
-      scale: {x: 0.9999998, y: 0.99999946, z: 0.9999991}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.9999991}
       transformModified: 1
     - name: J_R_SusoSide_00
       position: {x: -0.0554337, y: 0.0017307289, z: -0.09865367}
@@ -2018,7 +2026,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: Character1_Hips
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 8f0565f23a2b58541a475bd3c1393052,
     type: 3}
