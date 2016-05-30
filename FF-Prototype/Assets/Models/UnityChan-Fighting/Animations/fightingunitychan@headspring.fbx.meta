@@ -374,10 +374,33 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 
-    animationRetargetingWarnings: 
+    animationImportWarnings: "\nDefault bone length found in this file is different
+      form the one found in the source avatar:\n\t'Character1_LeftFoot' : position
+      error = 1.034727 mm\n\t'Character1_RightFoot' : position error = 1.035484 mm\n\t'Character1_RightHand'
+      : position error = 1.283811 mm\n\nInbetween bone default rotation found in this
+      file is different from the one found in the source avatar:\n\t'Character1_Spine'
+      : rotation error = 27.018644 deg\n\nClip 'Take 001' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Character1_Spine' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tLeftLowerLeg
+      average position error 0.2 mm and maximum position error 2.5 mm at time 0:18
+      (36.0%) Frame 18\n\tLeftFoot average position error 1.0 mm and maximum position
+      error 1.1 mm at time 0:19 (38.0%) Frame 19\n\tRightLowerLeg average position
+      error 0.2 mm and maximum position error 2.5 mm at time 0:19 (38.0%) Frame 19\n\tRightFoot
+      average position error 1.0 mm and maximum position error 1.1 mm at time 0:18
+      (36.0%) Frame 18\n\tLeftUpperArm average position error 68.4 mm and maximum
+      position error 133.1 mm at time 0:10 (20.0%) Frame 10\n\tLeftLowerArm average
+      position error 51.6 mm and maximum position error 133.9 mm at time 0:10 (20.0%)
+      Frame 10\n\tLeftHand average position error 48.1 mm and maximum position error
+      106.2 mm at time 0:41 (82.0%) Frame 41\n\tRightUpperArm average position error
+      68.4 mm and maximum position error 133.1 mm at time 0:10 (20.0%) Frame 10\n\tRightLowerArm
+      average position error 43.6 mm and maximum position error 117.7 mm at time 0:10
+      (20.0%) Frame 10\n\tRightHand average position error 44.3 mm and maximum position
+      error 88.3 mm at time 0:41 (82.0%) Frame 41\n\tHead average position error 68.4
+      mm and maximum position error 133.1 mm at time 0:10 (20.0%) Frame 10\n"
     animationDoRetargetingWarnings: 1
-    animationCompression: 3
+    animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -401,9 +424,9 @@ ModelImporter:
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
+      keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
-      heightFromFeet: 0
+      heightFromFeet: 1
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
