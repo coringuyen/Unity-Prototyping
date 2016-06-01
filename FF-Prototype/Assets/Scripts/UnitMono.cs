@@ -4,119 +4,110 @@ using UnityEngine.UI;
 
 public class UnitMono : MonoBehaviour
 {
-    public int health;
-    public int resource;
-    public string unitName;
+	public Text avgVelocity;
+	public Text insVelocity;
+	[HideInInspector]
+	public int health;
+	[HideInInspector]
+	public int resource;
+	[HideInInspector]
+	public string unitName;
 
-    public Unit unit;
-    public Transform target;
-    [SerializeField]
-    private Animator m_anim;
-    public Text speedText;
-    public Vector3 origin;
-    Rigidbody m_rigidBody;
+	public Unit unit;
+	public Transform target;
+    
 
-    void Awake()
-    {
-        Unit unit = new Unit(unitName, health, resource);
-        m_anim = GetComponent<Animator>();
-        m_rigidBody = GetComponent<Rigidbody>();
-        origin = transform.position;
+	public Vector3 origin;
+	[SerializeField]
+	Animator m_anim;
+	Rigidbody m_rigidBody;
 
-    }
-    public bool runit = false;
-    void Update()
-    {
+	void Awake ()
+	{
+		Unit unit = new Unit (unitName, health, resource);
+		m_anim = GetComponent<Animator> ();
+		m_rigidBody = GetComponent<Rigidbody> ();
+		origin = transform.position;
+		Debug.Log (Time.timeScale);
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            StopAllCoroutines();
-            StartCoroutine(Move(origin));
-        }
-        if (Input.GetKeyDown((KeyCode.E)) || runit)
-        {
-            StopAllCoroutines();
-            StartCoroutine(Move(target.position, 3f, 2f));
-        }
-    }
-    public float forwardSpeed = 3.0f;
+	}
 
-    public float backwardSpeed = 3.0f;
+	bool slow = false;
 
-    public float rotateSpeed = 5.0f;
-    bool turning = false;
-    [SerializeField]
-    float h;
+	void Update ()
+	{
+		if (Input.GetKeyDown (KeyCode.DownArrow))
+			Time.timeScale -= .1f;
+		if (Input.GetKeyDown (KeyCode.UpArrow))
+			Time.timeScale += .1f;
+	
+		if (Input.GetKeyDown (KeyCode.R))
+		{
+			StopAllCoroutines ();
+			StartCoroutine (Move (target.position, 2));
+		}
+		if (Input.GetKeyDown ((KeyCode.E)))
+		{
 
-    [SerializeField]
-    float v;
-    void FixedUpdate()
-    {
-         h = Input.GetAxis("Horizontal");
-         v = Input.GetAxis("Vertical");
+			StopAllCoroutines ();
+			StartCoroutine (Move (origin, 3));           
+		}
+		avgVelocity.text = "Average Velocity: " + avgVel.ToString ();
+		insVelocity.text = "Instant Velocity: " + insVel.ToString ();
 
-        m_anim.SetFloat("Speed", v);
-        m_anim.SetFloat("Direction", h);
-        Vector3 velocity = new Vector3(0, 0, v);
+	}
+
+	void OnAnimatorMove ()
+	{
+		m_anim.SetFloat ("Speed", insVel / 7.5f);
+
+	}
+
+
+	int safecounter = 0;
+
+	[SerializeField]
+	float speed;
+
+	[SerializeField]
+	float velocity;
+    
+	//When t = 0 returns a. When t = 1 returns b. When t = 0.5 returns the point midway between a and b.
+	IEnumerator Move (Vector3 dest, float totalTime)
+	{
+		Vector3 start = transform.position;	 
+	 
+		float elapsedTime = 0;
+		float startTime = 0;
+		while (elapsedTime < totalTime)
+		{ 
+			
+			elapsedTime += Time.deltaTime;
+
+			float t = elapsedTime / totalTime;
+			Vector3 oldp = transform.position;
+
+			//set the position to a fraction of
+			//smoothlerp
+			//transform.position = Vector3.Lerp (start, dest, t * t * t * (t * (6f*t - 15f) + 10f));
+			//exponentiallerp
+
+			transform.position = Vector3.Lerp (start, dest, t * t);
+			Vector3 newp = transform.position;
+
+			avgVel = Vector3.Magnitude (dest - start) / totalTime;
+			Mathf.Clamp (insVel, 0, 7.5f);
+			insVel = Vector3.Magnitude (newp - oldp) / Time.deltaTime;
+
+
+			yield return null;
+		}
+		speed = 0;
+		avgVel = 0;
+		insVel = 0;
         
-        velocity = transform.TransformDirection(velocity);
-        m_rigidBody.velocity = velocity;
-        if (v > 0.1f)
-        {
-            velocity *= forwardSpeed;
-            if (h > .5f || h < -.5f)
-                forwardSpeed = 1;
-            else
-                forwardSpeed = 3;
-        }
-        if (v < -0.1f)
-            velocity *= backwardSpeed;
+	}
 
-       // transform.Rotate(0, h * rotateSpeed, 0);
-
-       // transform.position += velocity * Time.fixedDeltaTime;
-    }
-
-
-    int safecounter = 0;
-
-    [SerializeField]
-    float speed;
-
-    [SerializeField]
-    float velocity;
-    IEnumerator Move(Vector3 dest, float duration = 3f, float offset = 0)
-    {
-        yield return new WaitForSeconds(.5f);
-        //Debug.LogError("stop");
-        transform.forward = Vector3.Normalize(dest - transform.position);
-        Vector3 start = transform.position;
-        float distanceTraveled = 0;
-        float travelTime = 0;
-        float distanceTotal = Vector3.Distance(start, dest);
-
-        float p = 0;
-
-        while (distanceTraveled < distanceTotal - offset)
-        {
-            travelTime += Time.deltaTime;
-
-            speed = distanceTraveled / travelTime;
-
-            Vector3 current = transform.position;
-
-            p = travelTime / duration;
-
-            transform.position = Vector3.Lerp(start, dest, p);
-
-            distanceTraveled = Vector3.Magnitude(current - start);
-
-
-            yield return null;
-        }
-
-        speed = 0;
-    }
-
-
+	float avgVel;
+	float insVel;
 }

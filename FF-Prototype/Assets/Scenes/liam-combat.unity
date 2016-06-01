@@ -200,9 +200,9 @@ MonoBehaviour:
   speedText: {fileID: 192263220}
   origin: {x: 0, y: 0, z: 0}
   runit: 0
-  forwardSpeed: 7
-  backwardSpeed: 2
-  rotateSpeed: 2
+  forwardSpeed: 3
+  backwardSpeed: 3
+  rotateSpeed: 5
   h: 0
   v: 0
   speed: 0
@@ -562,7 +562,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 851d11542d51c464e89acf6875599172, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 851d11542d51c464e89acf6875599172, type: 2}
       propertyPath: m_IsActive
