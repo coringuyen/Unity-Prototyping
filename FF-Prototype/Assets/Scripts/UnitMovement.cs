@@ -21,6 +21,7 @@ public class UnitMovement : MonoBehaviour
         EaseOut,
         Smoothe,
         Smoother,
+        Custom,
         
     }
 
@@ -48,18 +49,22 @@ public class UnitMovement : MonoBehaviour
     {
         avgVelocity.text = "Average Velocity: " + avgVel.ToString();
         insVelocity.text = "Instant Velocity: " + insVel.ToString();
-    }
 
+    }
+    
+    
 
     void OnAnimatorMove()
     {
-        m_anim.SetFloat("Speed", insVel / 7.5f);
+        if (insVel <= 0.001)
+            insVel = 0;
+        m_anim.SetFloat("Speed", insVel);
     }
     [SerializeField]
     float animTime = 2;
     public void Action(Transform t)
     {
-        Vector3 dest = new Vector3(t.position.x - 1, t.position.y, t.position.z);
+        Vector3 dest = new Vector3(t.position.x, t.position.y, t.position.z) * .85f;
         transform.forward = dest - t.position.normalized;
         StartCoroutine(Move(dest, animTime));
     }
@@ -71,11 +76,14 @@ public class UnitMovement : MonoBehaviour
     [SerializeField]
     float velocity;
 
+    [SerializeField]
+    float breakingDistance = 2.0f;
     //When t = 0 returns a. When t = 1 returns b. When t = 0.5 returns the point midway between a and b.
     IEnumerator Move(Vector3 dest, float lerpTime)
     {
+        
         Vector3 start = transform.position;
-
+        
         float currentTime = 0;
 
         while (currentTime < lerpTime)
@@ -85,7 +93,7 @@ public class UnitMovement : MonoBehaviour
             currentTime += Time.deltaTime;
             if (currentTime > lerpTime)
                 currentTime = lerpTime;
-
+            
             float t = currentTime / lerpTime;           
             
             switch (lerpType)
@@ -107,6 +115,11 @@ public class UnitMovement : MonoBehaviour
                 case LerpType.Smoother:
                     t = t * t * t * (t * (6f * t - 15f) + 10f);
                     break;
+                case LerpType.Custom:
+                    t = ac.Evaluate(t);
+                    break;
+                default:
+                    break;
             }           
 
             transform.position = Vector3.Lerp(start, dest, t);
@@ -115,10 +128,10 @@ public class UnitMovement : MonoBehaviour
 
             avgVel = Vector3.Magnitude(dest - start) / lerpTime;
 
-            Mathf.Clamp(insVel, 0, 7.5f);
 
-            insVel = Vector3.Magnitude(newp - oldp) / Time.deltaTime;
 
+            insVel = Mathf.Clamp(Vector3.Magnitude(newp - oldp) / Time.deltaTime, 0, 7.5f)/ 7.5f;            
+                
             yield return null;
         }
 

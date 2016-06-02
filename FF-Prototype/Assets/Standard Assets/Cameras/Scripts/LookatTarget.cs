@@ -1,8 +1,10 @@
 using System;
 using UnityEngine;
 
+
 namespace UnityStandardAssets.Cameras
 {
+    [ExecuteInEditMode]
     public class LookatTarget : AbstractTargetFollower
     {
         // A simple script to make one object look at another,

@@ -105,15 +105,15 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .5
+        second: 0.5
       data:
         first:
           name: _AlphaTestRef
-        second: .5
+        second: 0.5
       data:
         first:
           name: _Parallax
-        second: .0199999996
+        second: 0.02
       data:
         first:
           name: _ZWrite
@@ -145,7 +145,7 @@ Material:
       data:
         first:
           name: _Metallic
-        second: .100000001
+        second: 0.1
       data:
         first:
           name: _Lightmapping
@@ -166,7 +166,7 @@ Material:
       data:
         first:
           name: _SpecColor
-        second: {r: .117647059, g: .117647059, b: .117647059, a: 1}
+        second: {r: 0.11764706, g: 0.11764706, b: 0.11764706, a: 1}
       data:
         first:
           name: _EmissionColorUI
@@ -178,7 +178,7 @@ Material:
       data:
         first:
           name: _SpecularColor
-        second: {r: .156862751, g: .156862751, b: .156862751, a: 1}
+        second: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
       data:
         first:
           name: _BaseScale
