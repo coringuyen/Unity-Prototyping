@@ -67,6 +67,7 @@ public class UnitMovement : MonoBehaviour
         Vector3 dest = new Vector3(t.position.x, t.position.y, t.position.z) * .85f;
         transform.forward = dest - t.position.normalized;
         StartCoroutine(Move(dest, animTime));
+        StartCoroutine(JabAndKick());
     }
 
 
@@ -135,10 +136,24 @@ public class UnitMovement : MonoBehaviour
             yield return null;
         }
 
+    
+
         speed = 0;
         avgVel = 0;
         insVel = 0;
 
+    }
+
+    IEnumerator JabAndKick()
+    {
+        m_anim.SetTrigger("Jab");
+        //while(m_anim.GetCurrentAnimatorClipInfo(0).)
+        //{
+        //    yield return null;
+        //}
+        m_anim.SetTrigger("RisingP");
+        
+        yield return null;
     }
 
 
