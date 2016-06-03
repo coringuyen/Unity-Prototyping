@@ -8,45 +8,53 @@ public class HitListener : MonoBehaviour {
 	void Start () {
         HitBoxTrigger.EventHit.AddListener(PlayAnim);
 	}
-	IEnumerator WaitForDone()
-    {
-        float animLength = GetComponent<Animation>().clip.length;
-        float start = 0;
-        while(start < animLength)
-        {
-            start += Time.deltaTime;
-            yield return null;
-        }
-        mainCam.SetActive(true);
-        yield return null;
-    }
+	
 
 	void PlayAnim()
     {
-        mainCam.SetActive(false);
-        GetComponent<Animation>().Play();
+        mainCam.SetActive(false);        
         StartCoroutine(WaitForDone());
     }
 
-    void Fade()
+    IEnumerator WaitForDone()
     {
-        StartCoroutine(FadeOut());
-    }
-    [SerializeField]
-    GameObject fadeimage;
-    IEnumerator FadeOut()
-    {
-        float fadeTime = 2.5f;
-        float ctime = 0;
-        fadeimage.GetComponent<UnityEngine.UI.Image>().enabled = true;
-        while (ctime < fadeTime)
+        GetComponent<Animation>().Play();
+        float start = 0;
+        float animLength = GetComponent<Animation>().clip.length;               
+        
+        while (start < animLength )
         {
-            ctime += Time.fixedDeltaTime;
-            fadeimage.GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, ctime / fadeTime);
-                
+            start += Time.fixedDeltaTime;
+            float timeRem = animLength - start;
+            Debug.Log(timeRem);
+
             yield return null;
         }
+
+        
+        
+        yield return null;
+    }
+
+    [SerializeField]
+    GameObject fadeimage;
+    [SerializeField]
+    float fadeTime = 1.5f;
+    IEnumerator FadeOut(float ft)
+    {        
+        float ctime = 0;
+        fadeimage.GetComponent<UnityEngine.UI.Image>().enabled = true;
+        while (ctime < ft)
+        {
+            ctime += Time.fixedDeltaTime;
+            fadeimage.GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, ctime / ft);
+
+            yield return null;
+        }
+        mainCam.SetActive(true);
+        fadeimage.GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, 0);
         fadeimage.GetComponent<UnityEngine.UI.Image>().enabled = false;
-        fadeimage.GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, 1);
+
+
     }
 }

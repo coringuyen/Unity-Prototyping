@@ -15,12 +15,12 @@ public class SkeletonController : MonoBehaviour {
     {
         HitBoxTrigger.EventHit.AddListener(OnHit);
 	}
-	
+    public float slowtime = 15;
 	void OnHit()
     {
         StopAllCoroutines();
         m_anim.SetTrigger("hit");        
-        StartCoroutine(SlowMo(3.0f));
+        StartCoroutine(SlowMo(slowtime));
         //GetComponent<AudioSource>().Play();
     }
 
