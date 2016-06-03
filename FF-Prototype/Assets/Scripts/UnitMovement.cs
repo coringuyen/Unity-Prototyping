@@ -29,7 +29,7 @@ public class UnitMovement : MonoBehaviour
     public Text avgVelocity;
     public Text insVelocity;
     public Transform target;
-    public Vector3 origin;
+    public Transform origin;
 
 
     private Animator m_anim;
@@ -41,14 +41,23 @@ public class UnitMovement : MonoBehaviour
     {
         m_anim = GetComponent<Animator>();
         m_rigidBody = GetComponent<Rigidbody>();
-        origin = transform.position;
+        transform.forward = Vector3.right;
+        
     }
     public AnimationCurve ac;
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.UpArrow))        
+            Time.timeScale = Mathf.Clamp(Time.timeScale + .1f, 0, 100f);
+        
+        if (Input.GetKeyDown(KeyCode.DownArrow))        
+            Time.timeScale = Mathf.Clamp(Time.timeScale - .1f, 0, 100f);  
+        
         avgVelocity.text = "Average Velocity: " + avgVel.ToString();
         insVelocity.text = "Instant Velocity: " + insVel.ToString();
+        if (Input.GetKeyDown(KeyCode.Space))
+            m_anim.SetTrigger("Hikick");   
 
     }
     
@@ -59,41 +68,51 @@ public class UnitMovement : MonoBehaviour
         if (insVel <= 0.001)
             insVel = 0;
         m_anim.SetFloat("Speed", insVel);
+        m_anim.SetFloat("Direction", 1);
     }
     [SerializeField]
     float animTime = 2;
+    [SerializeField]
+    float attackDistance = 1.5f;
+    
     public void Action(Transform t)
     {
-        Vector3 dest = new Vector3(t.position.x, t.position.y, t.position.z) * .85f;
-        transform.forward = dest - t.position.normalized;
-        StartCoroutine(Move(dest, animTime));
-        StartCoroutine(JabAndKick());
+        StopAllCoroutines();        
+        
+        StartCoroutine(Move(t, animTime));
     }
-
-
-    [SerializeField]
-    float speed;
-
-    [SerializeField]
-    float velocity;
-
-    [SerializeField]
-    float breakingDistance = 2.0f;
+ 
+ 
     //When t = 0 returns a. When t = 1 returns b. When t = 0.5 returns the point midway between a and b.
-    IEnumerator Move(Vector3 dest, float lerpTime)
+    IEnumerator Move(Transform tdest, float lerpTime)
     {
-        
+
+        float dx = tdest.position.x;
+        float dy = tdest.position.y;
+        float dz = tdest.position.z;
+
         Vector3 start = transform.position;
-        
+        //if moving to attack set the dest to the attack distance offset
+        Vector3 dest = (tdest == origin) ? new Vector3(dx, dy, dz) : new Vector3(dx - attackDistance, dy, dz);
+  
+       
+
         float currentTime = 0;
 
         while (currentTime < lerpTime)
         {
             Vector3 oldp = transform.position;
 
+            Vector3 dir = (dest - oldp).normalized;
+
+            transform.TransformDirection(dir);
+
             currentTime += Time.deltaTime;
+
             if (currentTime > lerpTime)
+            {
                 currentTime = lerpTime;
+            }
             
             float t = currentTime / lerpTime;           
             
@@ -125,21 +144,17 @@ public class UnitMovement : MonoBehaviour
 
             transform.position = Vector3.Lerp(start, dest, t);
 
-            Vector3 newp = transform.position;
+            Vector3 newp = transform.position;           
 
             avgVel = Vector3.Magnitude(dest - start) / lerpTime;
 
-
-
-            insVel = Mathf.Clamp(Vector3.Magnitude(newp - oldp) / Time.deltaTime, 0, 7.5f)/ 7.5f;            
+            insVel = Mathf.Clamp(Vector3.Magnitude(newp - oldp) / Time.deltaTime, 0, 7.5f) / 7.5f;            
                 
             yield return null;
-        }
+        } 
 
-    
-
-        speed = 0;
         avgVel = 0;
+
         insVel = 0;
 
     }
@@ -147,10 +162,7 @@ public class UnitMovement : MonoBehaviour
     IEnumerator JabAndKick()
     {
         m_anim.SetTrigger("Jab");
-        //while(m_anim.GetCurrentAnimatorClipInfo(0).)
-        //{
-        //    yield return null;
-        //}
+ 
         m_anim.SetTrigger("RisingP");
         
         yield return null;
