@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class HitListener : MonoBehaviour
 {
-
+    [SerializeField]
+    GameObject UI;
     [SerializeField]
     GameObject m_mainCam;
 
@@ -15,48 +17,68 @@ public class HitListener : MonoBehaviour
 
     Animator m_anim;
 
-    public float slowDuration = 5f;
+    public float slowDuration;
     public float fadeDuration;
-
+    static int actionState = Animator.StringToHash("Base.actionshot");
     void Awake()
     {
         m_anim = GetComponent<Animator>();
+        UI = GameObject.Find("CombatPanel");
     }
-    void Start ()
+    void Start()
     {
         HitBoxTrigger.EventHit.AddListener(PlayAnim);
-	}
+    }
 
-    
-	void PlayAnim()
+
+    void PlayAnim()
     {
         StopAllCoroutines();
-        m_mainCam.SetActive(false);
-        m_anim.SetBool("actionshot", true);
-        m_anim.speed = 1 / slowDuration;        
-        StartCoroutine(SlowMo(slowDuration));
+
+        StartCoroutine(StartSequence());
     }
-    static int actionState = Animator.StringToHash("Base.actionshot");
-    void ResetFade()
-    {
-        m_fadeImage.SetActive(false);
-        //reset it back to normal
-        m_fadeImage.GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, 0);
-    }
+
     //hit
     //stoptime
     //rotate camera
     //enabletime
     //fade
     //enablecam
-    void Update()
+
+    IEnumerator StartSequence()
     {
-        if (m_anim.GetCurrentAnimatorStateInfo(0).IsName("actionshot"))
-            Debug.Log("is action");
-        if (m_anim.GetCurrentAnimatorStateInfo(0).IsName("idle"))
-            Debug.Log("is idle");
+        StartCoroutine(Fade(fadeDuration, 0));
+        UI.SetActive(false);
+        m_anim.SetBool("actionshot", true);
+        
+        Func<bool> animdone = () =>
+        {
+            return (
+                m_anim.GetCurrentAnimatorStateInfo(0).IsName("actionshot")
+                &&
+                m_anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= m_anim.GetCurrentAnimatorClipInfo(0).Length);
+        };
+
+
+        m_mainCam.SetActive(false);
+        m_anim.speed = 1 / slowDuration;
+        Time.timeScale = 0;
+        yield return new WaitUntil(animdone);        
+        yield return StartCoroutine(SlowMo(slowDuration));
+        yield return StartCoroutine(Fade(fadeDuration, 1));
+
+
+        m_anim.SetBool("actionshot", false);
+        //account for if the curve doesn't end at 1
+        if (Time.timeScale < 1) Time.timeScale = 1;
+
+
+        m_mainCam.SetActive(true);
+        UI.SetActive(true);
+        yield return StartCoroutine(Fade(fadeDuration, 0));
+        StopAllCoroutines();
     }
- 
+
     IEnumerator SlowMo(float duration)
     {
         float elapsedTime = 0;
@@ -68,28 +90,27 @@ public class HitListener : MonoBehaviour
 
             yield return null;
         }
-        yield return StartCoroutine(FadeOut(1.5f));
-        m_mainCam.SetActive(true);
-        Time.timeScale = 1;
+
+
     }
 
-    IEnumerator FadeOut(float duration)
-    {        
-        float ctime = 0;
+    IEnumerator Fade(float duration, float to)
+    {
+        float elapsedTime = 0;
         m_fadeImage.SetActive(true);
-        while (ctime < duration)
+        while (elapsedTime < duration)
         {
-            ctime += Time.fixedDeltaTime;
-            
-            float p = ctime / duration;
+            elapsedTime += Time.fixedDeltaTime;
+
+            float t = (to > 0) ? elapsedTime / duration : 1 - (elapsedTime / duration);
             //lerp the alpha to full 
-            m_fadeImage.GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, p);
-                            
+            m_fadeImage.GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, t);
+
             yield return null;
         }
 
-        ResetFade();
-        m_anim.SetBool("actionshot", false);
+        
+
     }
 
 

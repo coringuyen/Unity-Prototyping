@@ -18,7 +18,8 @@ public class SkeletonController : MonoBehaviour
 	
 	void OnHit()
     {
-        m_anim.SetTrigger("hit");        
+        if(!m_anim.GetCurrentAnimatorStateInfo(0).IsName("Damage"))
+            m_anim.SetTrigger("hit");        
         
     }
 
