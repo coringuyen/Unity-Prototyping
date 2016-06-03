@@ -26,16 +26,22 @@ public class UnitMovement : MonoBehaviour
     }
 
     public LerpType lerpType;
-    public Text avgVelocity;
-    public Text insVelocity;
+    public Text UI_avgVelocity;
+    public Text UI_insVelocity;
     public Transform target;
     public Transform origin;
+    public AnimationCurve ac;
 
 
     private Animator m_anim;
     private Rigidbody m_rigidBody;
-    private float avgVel;
-    private float insVel;
+    private float m_avgVel;
+    private float m_insVel;
+
+    [SerializeField]
+    float animTime = 2;
+    [SerializeField]
+    float attackDistance = 1.5f;
 
     void Awake()
     {
@@ -44,36 +50,37 @@ public class UnitMovement : MonoBehaviour
         transform.forward = Vector3.right;
         
     }
-    public AnimationCurve ac;
-
+    bool canAttack = true;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))        
-            Time.timeScale = Mathf.Clamp(Time.timeScale + .1f, 0, 100f);
         
         if (Input.GetKeyDown(KeyCode.DownArrow))        
             Time.timeScale = Mathf.Clamp(Time.timeScale - .1f, 0, 100f);  
-        
-        avgVelocity.text = "Average Velocity: " + avgVel.ToString();
-        insVelocity.text = "Instant Velocity: " + insVel.ToString();
-        if (Input.GetKeyDown(KeyCode.Space))
-            m_anim.SetTrigger("Hikick");   
-
+        if(UI_avgVelocity != null)
+            UI_avgVelocity.text = "Average Velocity: " + m_avgVel.ToString();
+        if(UI_insVelocity != null)
+            UI_insVelocity.text = "Instant Velocity: " + m_insVel.ToString();
+        if (canAttack)
+        {
+            canAttack = false;
+            if (Input.GetKeyDown(KeyCode.Space))
+                m_anim.SetTrigger("Hikick");
+        }
+        if(m_anim.GetCurrentAnimatorStateInfo(0).IsName("combatidle"))
+        {
+            canAttack = true;
+        }
     }
     
     
 
     void OnAnimatorMove()
     {
-        if (insVel <= 0.001)
-            insVel = 0;
-        m_anim.SetFloat("Speed", insVel);
+        if (m_insVel <= 0.001)
+            m_insVel = 0;
+        m_anim.SetFloat("Speed", m_insVel);
         m_anim.SetFloat("Direction", 1);
     }
-    [SerializeField]
-    float animTime = 2;
-    [SerializeField]
-    float attackDistance = 1.5f;
     
     public void Action(Transform t)
     {
@@ -146,16 +153,18 @@ public class UnitMovement : MonoBehaviour
 
             Vector3 newp = transform.position;           
 
-            avgVel = Vector3.Magnitude(dest - start) / lerpTime;
+            m_avgVel = Vector3.Magnitude(dest - start) / lerpTime;
 
-            insVel = Mathf.Clamp(Vector3.Magnitude(newp - oldp) / Time.deltaTime, 0, 7.5f) / 7.5f;            
+            m_insVel = Mathf.Clamp(Vector3.Magnitude(newp - oldp) / Time.deltaTime, 0, 7.5f) / 7.5f;            
                 
             yield return null;
         } 
 
-        avgVel = 0;
+        m_avgVel = 0;
 
-        insVel = 0;
+        m_insVel = 0;
+
+        m_anim.SetTrigger("Hikick");
 
     }
 

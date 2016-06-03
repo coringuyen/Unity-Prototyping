@@ -9,13 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 406108}
   - 20: {fileID: 2078934}
-  - 124: {fileID: 12461814}
-  - 92: {fileID: 9207292}
-  - 81: {fileID: 8150530}
-  - 114: {fileID: 11404084}
   - 111: {fileID: 11122948}
+  - 114: {fileID: 11400556}
   m_Layer: 0
-  m_Name: HandheldCamera 1
+  m_Name: ActionCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.89, y: 2.32, z: -6.82}
+  m_LocalPosition: {x: 3.33, y: 1.13, z: -4.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -46,19 +43,19 @@ Camera:
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.7
-    y: 0.75
-    width: 0.25
-    height: 0.5
-  near clip plane: 5
-  far clip plane: 4000
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 1
+  far clip plane: 200
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 2
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -68,20 +65,6 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!81 &8150530
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 142730}
-  m_Enabled: 0
---- !u!92 &9207292
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 142730}
-  m_Enabled: 0
 --- !u!111 &11122948
 Animation:
   m_ObjectHideFlags: 1
@@ -90,40 +73,42 @@ Animation:
   m_GameObject: {fileID: 142730}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: a66b074097875ae4abd9e6f1c8f39415, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: a66b074097875ae4abd9e6f1c8f39415, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &11404084
+--- !u!114 &11400556
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142730}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d947636a9390f6a46a121124154e6e3f, type: 3}
+  m_Script: {fileID: 11500000, guid: e6fd5865d5f217d49885437c237444e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 0}
-  m_AutoTargetPlayer: 1
-  m_UpdateType: 1
-  m_RotationRange: {x: 90, y: 360}
-  m_FollowSpeed: 1
-  m_SwaySpeed: 0.5
-  m_BaseSwayAmount: 0.5
-  m_TrackingSwayAmount: 0.5
-  m_TrackingBias: 0
---- !u!124 &12461814
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 142730}
-  m_Enabled: 0
+  m_mainCam: {fileID: 0}
+  m_fadeImage: {fileID: 0}
+  m_ac:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 10
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
