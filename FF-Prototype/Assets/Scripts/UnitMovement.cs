@@ -1,12 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
+using UnityEngine.Events;
+
+[Serializable]
+public class AnimationEvent : UnityEvent
+{
+}
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Animator))]
 public class UnitMovement : MonoBehaviour
-{
-
+{    
+    [SerializeField]
+    public static AnimationEvent PlayerAttack;
     /// <summary>
     /// Equations from the following website
     /// https://chicounity3d.wordpress.com/2014/05/23/how-to-lerp-like-a-pro/
@@ -50,31 +58,17 @@ public class UnitMovement : MonoBehaviour
         m_anim = GetComponent<Animator>();
         m_rigidBody = GetComponent<Rigidbody>();
         transform.forward = Vector3.right;
+        PlayerAttack = new AnimationEvent();
         
     }
     bool canAttack = true;
     void FixedUpdate()
-    {
-        
-        if (Input.GetKeyDown(KeyCode.DownArrow))        
-            Time.timeScale = Mathf.Clamp(Time.timeScale - .1f, 0, 100f);  
-        if(UI_avgVelocity != null)
-            UI_avgVelocity.text = "Average Velocity: " + m_avgVel.ToString();
-        if(UI_insVelocity != null)
-            UI_insVelocity.text = "Instant Velocity: " + m_insVel.ToString();
-        if (canAttack)
-        {
-            canAttack = false;
-            if (Input.GetKeyDown(KeyCode.Space))
-                m_anim.SetTrigger("Hikick");
-        }
+    {  
         if(m_anim.GetCurrentAnimatorStateInfo(0).IsName("combatidle"))
         {
             canAttack = true;
         }
     }
-    
-    
 
     void OnAnimatorMove()
     {        
@@ -83,7 +77,8 @@ public class UnitMovement : MonoBehaviour
         m_anim.SetFloat("Speed", m_insVel);
         m_anim.SetFloat("Direction", 1);
     }
-    bool moving;
+
+    bool moving = false;
     public void Action(Transform t)
     {        
         if (!moving && canAttack)
@@ -94,14 +89,16 @@ public class UnitMovement : MonoBehaviour
         }
     }
 
+    public string attackName = "Hikick";
     IEnumerator MoveAndAttack(Transform t)
     {
         //if we are at least 1 unit away we will walk
         if(Vector3.Distance(transform.position, t.position) > 5)
             yield return StartCoroutine(Move(t, animTime));
         moving = false;
-        if(t.name != "Origin")
-            m_anim.SetTrigger("Hikick");
+        if (t.name != "Origin")
+            yield return StartCoroutine(Attack(attackName));
+            
         else
         {
             transform.forward *= -1;
@@ -110,7 +107,34 @@ public class UnitMovement : MonoBehaviour
         
     }
  
+    IEnumerator Attack(string name)
+    {
+        m_anim.SetTrigger(name);
+        yield return new WaitForEndOfFrame();
+        float transitionTime = m_anim.GetAnimatorTransitionInfo(0).normalizedTime;
+        while (transitionTime > 0)
+        {
+            transitionTime = m_anim.GetAnimatorTransitionInfo(0).normalizedTime;
+            yield return null;
+        }
  
+
+        float timer = 0;
+        while(timer < m_anim.GetCurrentAnimatorStateInfo(0).length)
+        {
+            timer += Time.fixedDeltaTime;
+            float p = timer / m_anim.GetCurrentAnimatorStateInfo(0).length;
+            if (p > .25f)
+            {
+                Debug.Log("Attack");
+                //Debug.Break();
+                PlayerAttack.Invoke();
+                break;
+            }
+            yield return null;
+        }
+
+    }
     //When t = 0 returns a. When t = 1 returns b. When t = 0.5 returns the point midway between a and b.
     IEnumerator Move(Transform tdest, float lerpTime)
     {

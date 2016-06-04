@@ -1,15 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
+public class UIButtonEvent : UnityEvent
+{
+
+}
 public class UIRoot : MonoBehaviour
 {
+ 
     public static UIRoot instance;
     [SerializeField]
     GameObject PartyInfo;
 
     [SerializeField]
-    GameObject Abilities;
+    GameObject CombatPanel;
 
     [SerializeField]
     GameObject AbilityInfo;
@@ -23,6 +29,17 @@ public class UIRoot : MonoBehaviour
     [SerializeField]
     Text healthText;
 
+    [SerializeField]
+    List<Button> buttons;
+
+    
+    
+
+    public void printsomething()
+    {
+        print("something");
+    }
+
     void Awake()
     {
         instance = this;
@@ -32,16 +49,17 @@ public class UIRoot : MonoBehaviour
     public void Setup()
     {
         GameStateManager.PlayerChange.AddListener(SetPartyInfo);
+ 
+
     }
 
     void SetPartyInfo(UnitMono um)
     {
         playerText.text = "Name: " + um.unitName.ToString();
         healthText.text = "Health: " + um.health.ToString();
-        resourceText.text = "Resource: " + um.resource.ToString();
-        
-    }
-
+        resourceText.text = "Resource: " + um.resource.ToString();        
+    }        
+ 
     [ContextMenu("Set Labels")]
     void SetTextLabels()
     {

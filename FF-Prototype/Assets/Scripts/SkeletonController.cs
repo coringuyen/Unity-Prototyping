@@ -5,7 +5,7 @@ using System.Collections;
 public class SkeletonController : MonoBehaviour
 {
     Animator m_anim;
-
+    
     void Awake()
     {
         m_anim = GetComponent<Animator>();
@@ -13,7 +13,7 @@ public class SkeletonController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        HitBoxTrigger.EventHit.AddListener(OnHit);
+        UnitMovement.PlayerAttack.AddListener(OnHit);
 	}
 	
 	void OnHit()
