@@ -93,10 +93,10 @@ public class UnitMovement : MonoBehaviour
     IEnumerator MoveAndAttack(Transform t)
     {
         //if we are at least 1 unit away we will walk
-        if(Vector3.Distance(transform.position, t.position) > 5)
+        if(Vector3.Distance(transform.position, t.position) > 2)
             yield return StartCoroutine(Move(t, animTime));
         moving = false;
-        if (t.name != "Origin")
+        if (t.name != "PlayerSpawn")
             yield return StartCoroutine(Attack(attackName));
             
         else
@@ -124,7 +124,7 @@ public class UnitMovement : MonoBehaviour
         {
             timer += Time.fixedDeltaTime;
             float p = timer / m_anim.GetCurrentAnimatorStateInfo(0).length;
-            if (p > .25f)
+            if (p > .5f)
             {
                 Debug.Log("Attack");
                 //Debug.Break();

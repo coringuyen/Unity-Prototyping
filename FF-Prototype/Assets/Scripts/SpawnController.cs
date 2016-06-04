@@ -35,6 +35,10 @@ public class SpawnController : MonoBehaviour
                           delegate { um.Action(GameObject.Find("EnemySpawn").transform); }
                           );
                     }
+                    if(b.name.Contains("Endturn"))
+                        b.onClick.AddListener(
+                          delegate { um.Action(GameObject.Find("PlayerSpawn").transform); }
+                          );
                 }
 
             }
