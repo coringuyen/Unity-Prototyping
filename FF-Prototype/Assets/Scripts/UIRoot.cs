@@ -26,9 +26,10 @@ public class UIRoot : MonoBehaviour
     void Awake()
     {
         instance = this;
+        SetTextLabels();
     }
 
-    void Start()
+    public void Setup()
     {
         GameStateManager.PlayerChange.AddListener(SetPartyInfo);
     }

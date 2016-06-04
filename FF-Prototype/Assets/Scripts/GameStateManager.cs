@@ -21,9 +21,8 @@ public class GameStateManager : MonoBehaviour
         if(PlayerChange == null)
             PlayerChange = new PlayerEvent();
 
-        combatUnits.AddRange(FindObjectsOfType<UnitMono>());        
-        
-        
+        combatUnits.AddRange(FindObjectsOfType<UnitMono>());
+        UIRoot.instance.Setup();
     }
     void Start()
     {
