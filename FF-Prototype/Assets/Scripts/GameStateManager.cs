@@ -22,10 +22,11 @@ public class GameStateManager : MonoBehaviour
             PlayerChange = new PlayerEvent();
 
         combatUnits.AddRange(FindObjectsOfType<UnitMono>());
-        UIRoot.instance.Setup();
+        
     }
     void Start()
     {
+        UIRoot.instance.Setup();
         currentUnit = combatUnits.Find(x => x.name.Contains("Chan"));
         PlayerChange.Invoke(currentUnit);
     }
