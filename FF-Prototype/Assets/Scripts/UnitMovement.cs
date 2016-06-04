@@ -26,7 +26,9 @@ public class UnitMovement : MonoBehaviour
     }
 
     public LerpType lerpType;
+    [HideInInspector]
     public Text UI_avgVelocity;
+    [HideInInspector]
     public Text UI_insVelocity;
     public Transform target;
     public Transform origin;
@@ -51,7 +53,7 @@ public class UnitMovement : MonoBehaviour
         
     }
     bool canAttack = true;
-    void Update()
+    void FixedUpdate()
     {
         
         if (Input.GetKeyDown(KeyCode.DownArrow))        
@@ -75,18 +77,37 @@ public class UnitMovement : MonoBehaviour
     
 
     void OnAnimatorMove()
-    {
+    {        
         if (m_insVel <= 0.001)
             m_insVel = 0;
         m_anim.SetFloat("Speed", m_insVel);
         m_anim.SetFloat("Direction", 1);
     }
-    
+    bool moving;
     public void Action(Transform t)
+    {        
+        if (!moving && canAttack)
+        {
+            moving = true;
+            StopAllCoroutines();
+            StartCoroutine(MoveAndAttack(t));
+        }
+    }
+
+    IEnumerator MoveAndAttack(Transform t)
     {
-        StopAllCoroutines();        
+        //if we are at least 1 unit away we will walk
+        if(Vector3.Distance(transform.position, t.position) > 5)
+            yield return StartCoroutine(Move(t, animTime));
+        moving = false;
+        if(t.name != "Origin")
+            m_anim.SetTrigger("Hikick");
+        else
+        {
+            transform.forward *= -1;
+        }
         
-        StartCoroutine(Move(t, animTime));
+        
     }
  
  
@@ -101,9 +122,8 @@ public class UnitMovement : MonoBehaviour
         Vector3 start = transform.position;
         //if moving to attack set the dest to the attack distance offset
         Vector3 dest = (tdest == origin) ? new Vector3(dx, dy, dz) : new Vector3(dx - attackDistance, dy, dz);
-  
-       
 
+        transform.forward = dest.normalized;
         float currentTime = 0;
 
         while (currentTime < lerpTime)
@@ -162,20 +182,6 @@ public class UnitMovement : MonoBehaviour
 
         m_avgVel = 0;
 
-        m_insVel = 0;
-
-        m_anim.SetTrigger("Hikick");
-
+        m_insVel = 0; 
     }
-
-    IEnumerator JabAndKick()
-    {
-        m_anim.SetTrigger("Jab");
- 
-        m_anim.SetTrigger("RisingP");
-        
-        yield return null;
-    }
-
-
 }
