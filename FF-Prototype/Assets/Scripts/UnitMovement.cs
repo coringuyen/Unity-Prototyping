@@ -61,14 +61,6 @@ public class UnitMovement : MonoBehaviour
         PlayerAttack = new AnimationEvent();
         
     }
-    bool canAttack = true;
-    void FixedUpdate()
-    {  
-        if(m_anim.GetCurrentAnimatorStateInfo(0).IsName("combatidle"))
-        {
-            canAttack = true;
-        }
-    }
 
     void OnAnimatorMove()
     {        
@@ -77,28 +69,43 @@ public class UnitMovement : MonoBehaviour
         m_anim.SetFloat("Speed", m_insVel);
         m_anim.SetFloat("Direction", 1);
     }
-
-    bool moving = false;
+    [SerializeField]
+    bool isAttacking;
+    [SerializeField]
+    bool isMoving;
     public void Action(Transform t)
-    {        
-        if (!moving && canAttack)
-        {
-            moving = true;
+    {                
+        if (!isMoving && !isAttacking)
+        {           
             StopAllCoroutines();
             StartCoroutine(MoveAndAttack(t));
         }
+        else
+        {
+            Debug.Log("can't attack");
+        }
     }
-
+    void FixedUpdate()
+    {
+        
+    }
     public string attackName = "Hikick";
     IEnumerator MoveAndAttack(Transform t)
     {
         //if we are at least 1 unit away we will walk
-        if(Vector3.Distance(transform.position, t.position) > 2)
+        if (Vector3.Distance(transform.position, t.position) > 2)
+        {
+            isMoving = true;
             yield return StartCoroutine(Move(t, animTime));
-        moving = false;
+            isMoving = false;
+        }
+
         if (t.name != "PlayerSpawn")
+        {
+            isAttacking = true;
             yield return StartCoroutine(Attack(attackName));
-            
+            isAttacking = false;
+        }
         else
         {
             transform.forward *= -1;
@@ -109,36 +116,34 @@ public class UnitMovement : MonoBehaviour
  
     IEnumerator Attack(string name)
     {
+        
         m_anim.SetTrigger(name);
-        yield return new WaitForEndOfFrame();
-        float transitionTime = m_anim.GetAnimatorTransitionInfo(0).normalizedTime;
-        while (transitionTime > 0)
+
+        int counter = 0;
+        while (m_anim.IsInTransition(0))
         {
-            transitionTime = m_anim.GetAnimatorTransitionInfo(0).normalizedTime;
+            Debug.Log("in transition yield" + counter++);
             yield return null;
         }
  
 
         float timer = 0;
-        while(timer < m_anim.GetCurrentAnimatorStateInfo(0).length)
+        while(timer < .28f)
         {
-            timer += Time.fixedDeltaTime;
-            float p = timer / m_anim.GetCurrentAnimatorStateInfo(0).length;
-            if (p > .5f)
-            {
-                Debug.Log("Attack");
-                //Debug.Break();
-                PlayerAttack.Invoke();
-                break;
-            }
+            timer += Time.deltaTime;
+            float animLength = m_anim.GetCurrentAnimatorStateInfo(0).length;
+            float p = timer / animLength;
+        
             yield return null;
         }
-
+        
+        PlayerAttack.Invoke();
+        while (m_anim.GetCurrentAnimatorStateInfo(0).IsName(attackName))
+            yield return null;
     }
     //When t = 0 returns a. When t = 1 returns b. When t = 0.5 returns the point midway between a and b.
     IEnumerator Move(Transform tdest, float lerpTime)
-    {
-
+    {        
         float dx = tdest.position.x;
         float dy = tdest.position.y;
         float dz = tdest.position.z;
@@ -206,6 +211,7 @@ public class UnitMovement : MonoBehaviour
 
         m_avgVel = 0;
 
-        m_insVel = 0; 
+        m_insVel = 0;
+        
     }
 }
