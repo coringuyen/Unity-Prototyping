@@ -5,7 +5,7 @@ using System;
 public class ActionCamera : MonoBehaviour
 {
     [SerializeField]
-    GameObject UI;
+    GameObject combatPanel;
     [SerializeField]
     GameObject m_mainCam;
 
@@ -23,7 +23,7 @@ public class ActionCamera : MonoBehaviour
     void Awake()
     {
         m_anim = GetComponent<Animator>();
-        UI = GameObject.Find("CombatPanel");
+        combatPanel = GameObject.Find("CombatPanel");
     }
     void Start()
     {
@@ -48,7 +48,7 @@ public class ActionCamera : MonoBehaviour
     IEnumerator StartSequence()
     {
         StartCoroutine(Fade(fadeDuration, 0));
-        UI.SetActive(false);
+        combatPanel.SetActive(false);
         m_anim.SetBool("actionshot", true);
         
         Func<bool> animdone = () =>
@@ -74,7 +74,7 @@ public class ActionCamera : MonoBehaviour
 
 
         m_mainCam.SetActive(true);
-        UI.SetActive(true);
+        combatPanel.SetActive(true);
         yield return StartCoroutine(Fade(fadeDuration, 0));
         StopAllCoroutines();
     }

@@ -34,10 +34,7 @@ public class UnitMovement : MonoBehaviour
     }
 
     public LerpType lerpType;
-    [HideInInspector]
-    public Text UI_avgVelocity;
-    [HideInInspector]
-    public Text UI_insVelocity;
+  
     public Transform target;
     public Transform origin;
     public AnimationCurve ac;
@@ -59,6 +56,8 @@ public class UnitMovement : MonoBehaviour
         m_rigidBody = GetComponent<Rigidbody>();
         transform.forward = Vector3.right;
         PlayerAttack = new AnimationEvent();
+        if(origin == null)
+            origin = GameObject.Find("PlayerSpawn").transform;
         
     }
 
@@ -105,6 +104,7 @@ public class UnitMovement : MonoBehaviour
             isAttacking = true;
             yield return StartCoroutine(Attack(attackName));
             isAttacking = false;
+            transform.position = origin.transform.position;
         }
         else
         {
@@ -124,8 +124,7 @@ public class UnitMovement : MonoBehaviour
         {
             Debug.Log("in transition yield" + counter++);
             yield return null;
-        }
- 
+        } 
 
         float timer = 0;
         while(timer < .28f)
