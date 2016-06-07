@@ -8,8 +8,14 @@ public class PlayerEvent : UnityEvent<UnitMono>
 
 }
 
+public class DamageEvent : UnityEvent<float, UnitMono>
+{
+
+}
+
 public class GameStateManager : MonoBehaviour
 {
+
     public SpawnController playerSpawner;
     public SpawnController enemySpawner;
     static public PlayerEvent PlayerChange;
@@ -31,7 +37,9 @@ public class GameStateManager : MonoBehaviour
     {
         UIRoot.instance.Setup();
         currentUnit = playerSpawner.unit;
-        PlayerChange.Invoke(currentUnit);
+        //janky right now but gets both ui to update
+        PlayerChange.Invoke(playerSpawner.unit);
+        PlayerChange.Invoke(enemySpawner.unit);
     }
     void Update()
     {        

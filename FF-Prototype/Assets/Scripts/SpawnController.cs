@@ -9,6 +9,10 @@ public class SpawnController : MonoBehaviour
     GameObject prefab;
     [SerializeField]
     GameObject UIPrefab;
+
+    [SerializeField]
+    Transform target;
+    
     private UnitMono m_unit;
     public UnitMono unit
     {
@@ -21,12 +25,15 @@ public class SpawnController : MonoBehaviour
         {
             GameObject pawn = Instantiate(prefab, transform.localPosition, Quaternion.identity) as GameObject;
             pawn.transform.SetParent(transform);
-
+            m_unit = pawn.GetComponent<UnitMono>();
+            UnitMovement um = pawn.GetComponent<UnitMovement>();
+            um.SetOrigin(transform);
+            um.SetTarget(target);
             if (UIPrefab != null)
             {
                 GameObject ap = Instantiate(UIPrefab) as GameObject;
                 var buttons = ap.GetComponentsInChildren<Button>();
-                UnitMovement um = pawn.GetComponent<UnitMovement>();
+                
                 foreach (var b in buttons)
                 {
                     if (b.name.Contains("Attack"))
@@ -52,6 +59,7 @@ public class SpawnController : MonoBehaviour
                 pawn.transform.forward = Vector3.left;
         }        
     }
+    
 
  
 

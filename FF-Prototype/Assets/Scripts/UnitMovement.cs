@@ -12,7 +12,7 @@ public class AnimationEvent : UnityEvent
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Animator))]
 public class UnitMovement : MonoBehaviour
-{    
+{
     [SerializeField]
     public static AnimationEvent PlayerAttack;
     /// <summary>
@@ -30,11 +30,21 @@ public class UnitMovement : MonoBehaviour
         Smoothe,
         Smoother,
         Custom,
-        
+
+    }
+
+    public void SetTarget(Transform t)
+    {
+        target = t;
+    }
+
+    public void SetOrigin(Transform t)
+    {
+        origin = t;
     }
 
     public LerpType lerpType;
-  
+
     public Transform target;
     public Transform origin;
     public AnimationCurve ac;
@@ -56,13 +66,10 @@ public class UnitMovement : MonoBehaviour
         m_rigidBody = GetComponent<Rigidbody>();
         transform.forward = Vector3.right;
         PlayerAttack = new AnimationEvent();
-        if(origin == null)
-            origin = GameObject.Find("PlayerSpawn").transform;
-        
     }
 
     void OnAnimatorMove()
-    {        
+    {
         if (m_insVel <= 0.001)
             m_insVel = 0;
         m_anim.SetFloat("Speed", m_insVel);
@@ -72,22 +79,24 @@ public class UnitMovement : MonoBehaviour
     bool isAttacking;
     [SerializeField]
     bool isMoving;
+    /// <summary>
+    /// callback function assigned to the ui buttons
+    /// </summary>
+    /// <param name="t"></param>
     public void Action(Transform t)
-    {                
+    {
         if (!isMoving && !isAttacking)
-        {           
+        {
             StopAllCoroutines();
             StartCoroutine(MoveAndAttack(t));
         }
-        else
-        {
-            Debug.Log("can't attack");
-        }
     }
-    void FixedUpdate()
+
+    void Attack(UnitMono um)
     {
-        
+        um.TakeDamage(25);
     }
+
     public string attackName = "Hikick";
     IEnumerator MoveAndAttack(Transform t)
     {
@@ -110,39 +119,43 @@ public class UnitMovement : MonoBehaviour
         {
             transform.forward *= -1;
         }
-        
-        
     }
- 
+
     IEnumerator Attack(string name)
     {
-        
+
         m_anim.SetTrigger(name);
 
-        int counter = 0;
+       
         while (m_anim.IsInTransition(0))
         {
-            Debug.Log("in transition yield" + counter++);
+            //Debug.Log("in transition yield" + counter++);
             yield return null;
-        } 
+        }
 
         float timer = 0;
-        while(timer < .28f)
+        while (timer < .28f)
         {
             timer += Time.deltaTime;
             float animLength = m_anim.GetCurrentAnimatorStateInfo(0).length;
             float p = timer / animLength;
-        
+
             yield return null;
         }
-        
+        Attack(target.GetComponent<SpawnController>().unit);
         PlayerAttack.Invoke();
         while (m_anim.GetCurrentAnimatorStateInfo(0).IsName(attackName))
             yield return null;
+        //apply damage
+       
+        
+
+
     }
+    
     //When t = 0 returns a. When t = 1 returns b. When t = 0.5 returns the point midway between a and b.
     IEnumerator Move(Transform tdest, float lerpTime)
-    {        
+    {
         float dx = tdest.position.x;
         float dy = tdest.position.y;
         float dz = tdest.position.z;
@@ -168,21 +181,21 @@ public class UnitMovement : MonoBehaviour
             {
                 currentTime = lerpTime;
             }
-            
-            float t = currentTime / lerpTime;           
-            
+
+            float t = currentTime / lerpTime;
+
             switch (lerpType)
             {
-                case LerpType.Linear:                    
+                case LerpType.Linear:
                     break;
                 case LerpType.Exponential:
                     t = t * t;
-                    break;                
+                    break;
                 case LerpType.EaseIn:
                     t = 1f - Mathf.Cos(t * Mathf.PI * 0.5f);
                     break;
                 case LerpType.EaseOut:
-                    t =  Mathf.Sin(t * Mathf.PI * 0.5f);
+                    t = Mathf.Sin(t * Mathf.PI * 0.5f);
                     break;
                 case LerpType.Smoothe:
                     t = t * t * (3f - 2f * t);
@@ -195,22 +208,22 @@ public class UnitMovement : MonoBehaviour
                     break;
                 default:
                     break;
-            }           
+            }
 
             transform.position = Vector3.Lerp(start, dest, t);
 
-            Vector3 newp = transform.position;           
+            Vector3 newp = transform.position;
 
             m_avgVel = Vector3.Magnitude(dest - start) / lerpTime;
 
-            m_insVel = Mathf.Clamp(Vector3.Magnitude(newp - oldp) / Time.deltaTime, 0, 7.5f) / 7.5f;            
-                
+            m_insVel = Mathf.Clamp(Vector3.Magnitude(newp - oldp) / Time.deltaTime, 0, 7.5f) / 7.5f;
+
             yield return null;
-        } 
+        }
 
         m_avgVel = 0;
 
         m_insVel = 0;
-        
+
     }
 }

@@ -16,8 +16,15 @@ public interface IUnit
     string name { get; set; }
 
     List<Ability> abilities { get; set; }
-}
 
+    UnitType unitType { get; set; }
+
+}
+public enum UnitType
+{
+    Player,
+    Enemy,
+}
 public interface IDamageable
 {
     void TakeDamage(int amount);
@@ -28,11 +35,11 @@ public interface IAbility
 {
     void Execute(Unit target);
 
-    int amount{ get; set; }
+    int amount { get; set; }
 
-    int cost{ get; set; }
+    int cost { get; set; }
 
-    string abilityName{ get; set; }
+    string abilityName { get; set; }
 
 
 }
@@ -65,10 +72,10 @@ public class Ability : IAbility
         switch (abilityType)
         {
             case AbilityType.Damage:
-                target.TakeDamage(m_amount); 
+                target.TakeDamage(m_amount);
                 break;
-            case AbilityType.Heal:         
-                target.TakeDamage(-m_amount); 
+            case AbilityType.Heal:
+                target.TakeDamage(-m_amount);
                 break;
             default:
                 break;
@@ -116,13 +123,10 @@ public class Ability : IAbility
 
     public string abilityName
     {
-        get{ return m_abilityName; }
-        set{ throw new NotImplementedException(); }
+        get { return m_abilityName; }
+        set { throw new NotImplementedException(); }
     }
-
-
-   
-
+    
 }
 
 public class Unit : IUnit, IDamageable
@@ -132,17 +136,17 @@ public class Unit : IUnit, IDamageable
 
     }
 
-    public Unit(string name, int h, int r)
+    public Unit(string n, int h, int r, UnitType ut)
     {
         m_health = h;
         m_resource = r;
-        m_name = name;
-
+        m_name = n;
+        m_unitType = ut;
     }
 
     public void TakeDamage(int amount)
     {
-        health -= amount;
+        m_health -= amount;
     }
 
     private string m_name;
@@ -150,6 +154,8 @@ public class Unit : IUnit, IDamageable
     private int m_health;
 
     private int m_resource;
+
+    private UnitType m_unitType;
 
     private List<Ability> m_abilities = new List<Ability>();
 
@@ -182,8 +188,8 @@ public class Unit : IUnit, IDamageable
     public string name
     {
         get
-        { 
-            return m_name; 
+        {
+            return m_name;
         }
         set
         {
@@ -204,7 +210,13 @@ public class Unit : IUnit, IDamageable
         }
     }
 
- 
+    public UnitType unitType
+    {
+        get { return m_unitType; }
+        set { throw new NotImplementedException(); }
+    }
+
+
 }
 
 
