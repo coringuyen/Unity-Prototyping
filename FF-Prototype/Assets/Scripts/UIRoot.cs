@@ -32,10 +32,10 @@ public class UIRoot : MonoBehaviour
     public void Setup()
     {
         GameStateManager.PlayerChange.AddListener(SetPartyInfo);
-        UnitMono.EventTakeDamage.AddListener(UpdateHealth);
+        UnitMono.EventTakeDamage.AddListener(UpdateInfo);
     }
     
-    void UpdateHealth(float amt, UnitMono um)
+    void UpdateInfo(float amt, UnitMono um)
     {
         if (um.unit.unitType == UnitType.Player)
             PlayerInfo.GetComponent<UIPartyInfo>().SetPartyInfo(um.health, um);

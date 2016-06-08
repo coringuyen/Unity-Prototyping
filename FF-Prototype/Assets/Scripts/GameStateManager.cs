@@ -8,31 +8,40 @@ public class PlayerEvent : UnityEvent<UnitMono>
 {
 
 }
-
+[Serializable]
 public class DamageEvent : UnityEvent<float, UnitMono>
 {
 
 }
 
+[Serializable]
+public class AnimationEvent : UnityEvent<UnitMono>
+{
+}
+
+
 public class GameStateManager : MonoBehaviour
 {
 
-    public SpawnController playerSpawner;
-    public SpawnController enemySpawner;
     static public PlayerEvent PlayerChange;
-    static UnitMono currentUnit;
+    static private UnitMono currentUnit;
+    [SerializeField]
+    SpawnController playerSpawner;
+    [SerializeField]
+    SpawnController enemySpawner;
     [SerializeField]
     List<UnitMono> combatUnits;
+
     void Awake()
     {
         playerSpawner.Setup();
         enemySpawner.Setup();
-        if(PlayerChange == null)
+        if (PlayerChange == null)
             PlayerChange = new PlayerEvent();
 
         combatUnits.Add(playerSpawner.unit);
         combatUnits.Add(enemySpawner.unit);
-        
+
     }
     void Start()
     {
@@ -43,7 +52,7 @@ public class GameStateManager : MonoBehaviour
         PlayerChange.Invoke(enemySpawner.unit);
     }
     void Update()
-    {        
+    {
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
     }
@@ -59,6 +68,11 @@ public class GameStateManager : MonoBehaviour
     {
         SceneManager.UnloadScene(0);
         SceneManager.LoadScene(0);
-        
+
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

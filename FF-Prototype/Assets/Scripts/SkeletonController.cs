@@ -13,14 +13,14 @@ public class SkeletonController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        UnitMovement.PlayerAttack.AddListener(OnHit);
+        UnitMono.EventPlayerAttack.AddListener(OnHit);
 	}
 	
     void OnAnimatorMove()
     {
         m_anim.SetInteger("health", GetComponent<UnitMono>().health);
     }
-	void OnHit()
+	void OnHit(UnitMono um)
     {
         if(!m_anim.GetCurrentAnimatorStateInfo(0).IsName("Damage"))
             m_anim.SetTrigger("hit");

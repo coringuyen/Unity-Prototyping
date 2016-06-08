@@ -497,7 +497,7 @@ GameObject:
   - 114: {fileID: 11407294}
   - 114: {fileID: 11489290}
   m_Layer: 8
-  m_Name: Skeleton@Prefab
+  m_Name: FightingSkeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1241,7 +1241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fffe3d476c65747813edf9f94d0cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionCamera: {fileID: 0}
   lerpType: 5
   target: {fileID: 0}
   origin: {fileID: 0}
@@ -1266,6 +1265,7 @@ MonoBehaviour:
   isAttacking: 0
   isMoving: 0
   attackName: 0
+  supercrit: 1
 --- !u!136 &13609230
 CapsuleCollider:
   m_ObjectHideFlags: 1

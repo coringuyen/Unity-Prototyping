@@ -28,12 +28,14 @@ public class ActionCamera : MonoBehaviour
     }
     void Start()
     {
-        UnitMovement.PlayerAttack.AddListener(PlayAnim);
+        UnitMono.EventPlayerAttack.AddListener(PlayAnim);
+        
     }
 
 
-    void PlayAnim()
+    void PlayAnim(UnitMono um)
     {
+        Debug.Log("PlayAnim: " + um.unitName);
         if (gameObject.activeSelf)
         {
             StopAllCoroutines();
@@ -59,7 +61,7 @@ public class ActionCamera : MonoBehaviour
             return (
                 m_anim.GetCurrentAnimatorStateInfo(0).IsName("actionshot")
                 &&
-                m_anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= m_anim.GetCurrentAnimatorClipInfo(0).Length);
+                m_anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1);
         };
 
 

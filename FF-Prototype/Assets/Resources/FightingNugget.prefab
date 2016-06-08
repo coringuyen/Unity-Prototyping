@@ -126,7 +126,7 @@ GameObject:
   - 114: {fileID: 11478136}
   - 136: {fileID: 13625512}
   m_Layer: 8
-  m_Name: Nugget
+  m_Name: FightingNugget
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,6 +379,7 @@ MonoBehaviour:
   health: 0
   resource: 0
   unitName: 
+  ut: 0
 --- !u!114 &11478136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -413,7 +414,8 @@ MonoBehaviour:
   attackDistance: 1.5
   isAttacking: 0
   isMoving: 0
-  attackName: Hikick
+  attackName: 0
+  supercrit: 1
 --- !u!136 &13625512
 CapsuleCollider:
   m_ObjectHideFlags: 1
