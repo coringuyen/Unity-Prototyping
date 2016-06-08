@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.Events;
 using System;
+using UnityEngine.SceneManagement;
 [Serializable]
 public class PlayerEvent : UnityEvent<UnitMono>
 {
@@ -45,5 +46,19 @@ public class GameStateManager : MonoBehaviour
     {        
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
+    }
+
+    public AudioClip winAudio;
+    public void OnWin()
+    {
+        GetComponent<AudioSource>().clip = winAudio;
+        GetComponent<AudioSource>().Play();
+    }
+
+    public void Restart()
+    {
+        SceneManager.UnloadScene(0);
+        SceneManager.LoadScene(0);
+        
     }
 }

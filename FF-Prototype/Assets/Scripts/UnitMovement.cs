@@ -95,6 +95,7 @@ public class UnitMovement : MonoBehaviour
     /// <param name="t"></param>
     public void Action(Transform t)
     {
+        supercrit = true;
         if (!isMoving && !isAttacking)
         {
             StopAllCoroutines();
@@ -128,6 +129,7 @@ public class UnitMovement : MonoBehaviour
     /// <returns></returns>
     IEnumerator ActionRoutine(Transform t)
     {
+
         //if we are at least 1 unit away we will walk
         if (Vector3.Distance(transform.position, t.position) > 2)
         {
@@ -153,19 +155,23 @@ public class UnitMovement : MonoBehaviour
             }
             if(win)
             {
+                actionCamera.gameObject.SetActive(false);
                 transform.LookAt(Camera.main.transform);
                 Camera.main.GetComponent<UnityStandardAssets.Cameras.LookatTarget>().SetTarget(transform);
+                FindObjectOfType<GameStateManager>().OnWin();
                 m_anim.SetBool("BattleReady", false);
                 m_anim.SetTrigger("Dance");
             }
         }
     }
-    public bool supercrit = false;
+    public bool supercrit = true;
     IEnumerator Attack(string animName)
     {
 
         m_anim.SetTrigger(animName);
-        
+
+        if (supercrit)
+            actionCamera.gameObject.SetActive(true);
 
         while (m_anim.IsInTransition(0))
         {
@@ -176,17 +182,18 @@ public class UnitMovement : MonoBehaviour
         float timer = 0;
         while (timer < .28f)
         {
-            timer += Time.deltaTime;
+            timer += Time.fixedDeltaTime;
             float animLength = m_anim.GetCurrentAnimatorStateInfo(0).length;
             float p = timer / animLength;
             yield return null;
         }
+        
+        GetComponent<AudioSource>().Play();
         if (Attack(target.GetComponent<SpawnController>().unit) < 1)
         {
-            win = true;
+            win = true; 
         }
-        if(supercrit)
-            actionCamera.gameObject.SetActive(true);
+        
         PlayerAttack.Invoke();
         while (m_anim.GetCurrentAnimatorStateInfo(0).IsName(animName))
             yield return null;
@@ -260,6 +267,9 @@ public class UnitMovement : MonoBehaviour
 
             yield return null;
         }
+
+        while (m_anim.IsInTransition(0))
+            yield return null;
 
         m_avgVel = 0;
 
