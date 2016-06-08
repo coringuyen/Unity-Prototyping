@@ -1241,6 +1241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fffe3d476c65747813edf9f94d0cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionCamera: {fileID: 0}
   lerpType: 5
   target: {fileID: 0}
   origin: {fileID: 0}
@@ -1264,7 +1265,7 @@ MonoBehaviour:
   attackDistance: 1.5
   isAttacking: 0
   isMoving: 0
-  attackName: Hikick
+  attackName: 0
 --- !u!136 &13609230
 CapsuleCollider:
   m_ObjectHideFlags: 1

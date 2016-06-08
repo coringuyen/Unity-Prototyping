@@ -5037,6 +5037,7 @@ MonoBehaviour:
   health: 0
   resource: 0
   unitName: 
+  ut: 0
 --- !u!114 &11456848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5048,9 +5049,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fffe3d476c65747813edf9f94d0cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionCamera: {fileID: 0}
   lerpType: 5
-  avgVelocity: {fileID: 0}
-  insVelocity: {fileID: 0}
   target: {fileID: 0}
   origin: {fileID: 0}
   ac:
@@ -5071,6 +5071,9 @@ MonoBehaviour:
     m_RotationOrder: 0
   animTime: 2
   attackDistance: 1.5
+  isAttacking: 0
+  isMoving: 0
+  attackName: 0
 --- !u!114 &11472092
 MonoBehaviour:
   m_ObjectHideFlags: 1

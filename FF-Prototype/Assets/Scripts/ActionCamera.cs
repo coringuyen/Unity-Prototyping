@@ -20,8 +20,9 @@ public class ActionCamera : MonoBehaviour
     public float slowDuration;
     public float fadeDuration;
     static int actionState = Animator.StringToHash("Base.actionshot");
+    public static ActionCamera instance;
     void Awake()
-    {
+    {        
         m_anim = GetComponent<Animator>();
         combatPanel = GameObject.Find("CombatPanel");
     }
@@ -33,9 +34,11 @@ public class ActionCamera : MonoBehaviour
 
     void PlayAnim()
     {
-        StopAllCoroutines();
-
-        StartCoroutine(StartSequence());
+        if (gameObject.activeSelf)
+        {
+            StopAllCoroutines();
+            StartCoroutine(StartSequence());
+        }
     }
 
     //hit

@@ -13,6 +13,7 @@ public class AnimationEvent : UnityEvent
 [RequireComponent(typeof(Animator))]
 public class UnitMovement : MonoBehaviour
 {
+    public ActionCamera actionCamera;
     [SerializeField]
     public static AnimationEvent PlayerAttack;
     /// <summary>
@@ -66,6 +67,15 @@ public class UnitMovement : MonoBehaviour
         m_rigidBody = GetComponent<Rigidbody>();
         transform.forward = Vector3.right;
         PlayerAttack = new AnimationEvent();
+        if (actionCamera == null)
+            actionCamera = FindObjectOfType<ActionCamera>();
+        
+    }
+
+    void Start()
+    {
+        actionCamera.gameObject.SetActive(false);
+        m_anim.SetBool("BattleReady", true);
     }
 
     void OnAnimatorMove()
@@ -88,17 +98,35 @@ public class UnitMovement : MonoBehaviour
         if (!isMoving && !isAttacking)
         {
             StopAllCoroutines();
-            StartCoroutine(MoveAndAttack(t));
+            StartCoroutine(ActionRoutine(t));
         }
     }
 
-    void Attack(UnitMono um)
+    float Attack(UnitMono um)
     {
         um.TakeDamage(25);
+        return um.health;
     }
+    public enum AnimationName
+    {
+        HiKick = 0,
+        SpinKick = 1,
+        Jab = 2,
+        RisingPunch = 3,
+        ScrewKick = 4,
+        None = 5,
 
-    public string attackName = "Hikick";
-    IEnumerator MoveAndAttack(Transform t)
+
+    }
+    public AnimationName attackName;
+    bool win = false;
+
+    /// <summary>
+    /// move then attack
+    /// </summary>
+    /// <param name="t"></param>
+    /// <returns></returns>
+    IEnumerator ActionRoutine(Transform t)
     {
         //if we are at least 1 unit away we will walk
         if (Vector3.Distance(transform.position, t.position) > 2)
@@ -111,22 +139,34 @@ public class UnitMovement : MonoBehaviour
         if (t.name != "PlayerSpawn")
         {
             isAttacking = true;
-            yield return StartCoroutine(Attack(attackName));
+
+            int randatt = UnityEngine.Random.Range(0, 5);
+            randatt = 1;
+            yield return StartCoroutine(Attack(((AnimationName)randatt).ToString()));
+            
+            yield return new WaitForSeconds(1);
             isAttacking = false;
-            transform.position = origin.transform.position;
-        }
-        else
-        {
-            transform.forward *= -1;
+            if (!win)
+            {
+                yield return StartCoroutine(Move(origin, 1));
+                transform.forward *= -1;
+            }
+            if(win)
+            {
+                transform.LookAt(Camera.main.transform);
+                Camera.main.GetComponent<UnityStandardAssets.Cameras.LookatTarget>().SetTarget(transform);
+                m_anim.SetBool("BattleReady", false);
+                m_anim.SetTrigger("Dance");
+            }
         }
     }
-
-    IEnumerator Attack(string name)
+    public bool supercrit = false;
+    IEnumerator Attack(string animName)
     {
 
-        m_anim.SetTrigger(name);
+        m_anim.SetTrigger(animName);
+        
 
-       
         while (m_anim.IsInTransition(0))
         {
             //Debug.Log("in transition yield" + counter++);
@@ -139,18 +179,18 @@ public class UnitMovement : MonoBehaviour
             timer += Time.deltaTime;
             float animLength = m_anim.GetCurrentAnimatorStateInfo(0).length;
             float p = timer / animLength;
-
             yield return null;
         }
-        Attack(target.GetComponent<SpawnController>().unit);
+        if (Attack(target.GetComponent<SpawnController>().unit) < 1)
+        {
+            win = true;
+        }
+        if(supercrit)
+            actionCamera.gameObject.SetActive(true);
         PlayerAttack.Invoke();
-        while (m_anim.GetCurrentAnimatorStateInfo(0).IsName(attackName))
+        while (m_anim.GetCurrentAnimatorStateInfo(0).IsName(animName))
             yield return null;
         //apply damage
-       
-        
-
-
     }
     
     //When t = 0 returns a. When t = 1 returns b. When t = 0.5 returns the point midway between a and b.

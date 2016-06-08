@@ -1916,7 +1916,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &9500000
 Animator:
@@ -1963,9 +1963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fffe3d476c65747813edf9f94d0cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionCamera: {fileID: 0}
   lerpType: 5
-  UI_avgVelocity: {fileID: 0}
-  UI_insVelocity: {fileID: 0}
   target: {fileID: 0}
   origin: {fileID: 0}
   ac:
@@ -1984,9 +1983,12 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  animTime: 2
+  animTime: 1
   attackDistance: 1.5
-  attackName: Hikick
+  isAttacking: 0
+  isMoving: 0
+  attackName: 0
+  supercrit: 0
 --- !u!114 &11495076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2001,6 +2003,7 @@ MonoBehaviour:
   health: 100
   resource: 100
   unitName: Propanol
+  ut: 0
 --- !u!136 &13652612
 CapsuleCollider:
   m_ObjectHideFlags: 1

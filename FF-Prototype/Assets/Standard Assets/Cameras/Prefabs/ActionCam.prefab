@@ -9,8 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 406108}
   - 20: {fileID: 2078934}
-  - 111: {fileID: 11122948}
   - 114: {fileID: 11400556}
+  - 95: {fileID: 9517334}
   m_Layer: 0
   m_Name: ActionCam
   m_TagString: Untagged
@@ -55,7 +55,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -65,21 +65,23 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!111 &11122948
-Animation:
+--- !u!95 &9517334
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142730}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: a66b074097875ae4abd9e6f1c8f39415, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: a66b074097875ae4abd9e6f1c8f39415, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 776306bfc14bc604b827cbb868d8576a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6fd5865d5f217d49885437c237444e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatPanel: {fileID: 0}
   m_mainCam: {fileID: 0}
   m_fadeImage: {fileID: 0}
   m_ac:
@@ -98,17 +101,19 @@ MonoBehaviour:
     m_Curve:
     - time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 0.25
+      outSlope: 0.25
       tangentMode: 10
     - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 0.25
+      inSlope: 0.25
+      outSlope: 0.25
       tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  slowDuration: 5
+  fadeDuration: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
