@@ -25,8 +25,8 @@ public class AbilitiesGUI : MonoBehaviour
         attack.onClick.AddListener(delegate { player.GetComponent<UnitMovement>().Action(target); });
         endTurn.onClick.AddListener(delegate { player.GetComponent<UnitMovement>().Action(Origin); });
 
-        player.GetComponent<UnitMovement>().avgVelocity = aveVel;
-        player.GetComponent<UnitMovement>().insVelocity = insVel;
+        //player.GetComponent<UnitMovement>().avgVelocity = aveVel;
+        //player.GetComponent<UnitMovement>().insVelocity = insVel;
 
         yield return new WaitForSeconds(0.0f);
     }
