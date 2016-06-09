@@ -5,6 +5,7 @@ public class HitEvent : UnityEvent
 {
 
 }
+
 [RequireComponent(typeof(BoxCollider))]
 public class HitBoxTrigger : MonoBehaviour
 {
