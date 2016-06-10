@@ -19,6 +19,7 @@ public class Tran_InputController : MonoBehaviour {
             // move forward
             //rb.velocity += new Vector3(1,0,0) * Time.deltaTime * 10;
             gameObject.transform.position += new Vector3(1, 0, 0) * Time.deltaTime;
+            
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -26,22 +27,50 @@ public class Tran_InputController : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
-            // move jump
+            // jump
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            // move dodge
+            // dodge
             anim.SetTrigger("Land");
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
-            // move Hikick
+            // Hikick
             anim.SetTrigger("HiKick");
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
-            // move Jab/Normal attack
+            // Jab/Normal attack
             anim.SetTrigger("Jab");
+        }
+
+        if (Input.GetKey(KeyCode.W))
+            anim.SetBool("Jab", false);
+
+        if (Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.L))
+        {
+            // Rising_P 
+            anim.SetTrigger("RisingPunch");
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            anim.SetBool("HiKick", false);
+        }
+
+        if (Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.K))
+        {
+            // Rising_P 
+            anim.SetTrigger("ScrewKick");
+        }
+
+        if (Input.GetKey(KeyCode.L))
+            anim.SetBool("HiKick", false);
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.L) && Input.GetKeyDown(KeyCode.K))
+        {
+            // Rising_P 
+            anim.SetTrigger("SamKick");
         }
     }
 }
