@@ -17,7 +17,8 @@ public class Tran_InputController : MonoBehaviour {
 	    if(Input.GetKeyDown(KeyCode.D))
         {
             // move forward
-            rb.velocity += new Vector3(1,0,0) * Time.deltaTime * 10;
+            //rb.velocity += new Vector3(1,0,0) * Time.deltaTime * 10;
+            gameObject.transform.position += new Vector3(1, 0, 0) * Time.deltaTime;
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
