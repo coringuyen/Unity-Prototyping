@@ -17,8 +17,6 @@ public class Tran_InputController : MonoBehaviour {
 	    if(Input.GetKeyDown(KeyCode.D))
         {
             // move forward
-            //rb.velocity += new Vector3(1,0,0) * Time.deltaTime * 10;
-            gameObject.transform.position += new Vector3(1, 0, 0) * Time.deltaTime;
             
         }
         if (Input.GetKeyDown(KeyCode.A))
@@ -55,9 +53,7 @@ public class Tran_InputController : MonoBehaviour {
         }
 
         if (Input.GetKey(KeyCode.D))
-        {
             anim.SetBool("HiKick", false);
-        }
 
         if (Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.K))
         {
@@ -65,9 +61,16 @@ public class Tran_InputController : MonoBehaviour {
             anim.SetTrigger("ScrewKick");
         }
 
-        if (Input.GetKey(KeyCode.L))
+        
+        if (Input.GetKey(KeyCode.S))
+        {
+            anim.SetBool("Jab", false);
             anim.SetBool("HiKick", false);
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.L) && Input.GetKeyDown(KeyCode.K))
+        }
+        if (Input.GetKey(KeyCode.K))
+            anim.SetBool("Land", false);
+
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.K) && Input.GetKeyDown(KeyCode.L))
         {
             // Rising_P 
             anim.SetTrigger("SamKick");
